@@ -1,5 +1,19 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-<h1>{{ website }} index</h1>
-{% endblock %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<header>
+    {% include 'navbar.html.twig' %}
+</header>
+    <h1>{{ website }} index</h1>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
+</html>
