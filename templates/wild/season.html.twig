@@ -1,6 +1,5 @@
-{# templates/wild/show.html.twig #}
 {% extends 'base.html.twig' %}
-{% block title %}{{ slug }}{% endblock %}
+{% block title %}{{ program.title }}{% endblock %}
 
 {% block body %}
     <div class="media">
@@ -8,13 +7,12 @@
         <div class="media-body">
             <h1 class="mt-0">{{ program.title }}</h1>
             <p>{{ program.summary }}</p>
-            <p>Catégorie : {{ program.category.name }}</p>
-            {% for season in seasons %}
-            <p><a href="">Saison {{ season.number }}</a></p>
+            <p>Categorie : {{ program.category.name }}</p>
+            {% for episode in episodes %}
+                <h3>Épisode {{ episode.number }}: {{ episode.title }}</h3>
+                <p>{{ episode.title }} {{ episode.synopsis }}</p>
             {% endfor %}
         </div>
     </div>
-    <a href="{{ path('wild_index') }}">
-        Retour à l'accueil
-    </a>
+    <a href="{{ path('wild_index') }}">Retour à l'accueil</a>
 {% endblock %}
