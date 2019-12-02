@@ -10,7 +10,7 @@
             <p>{{ program.summary }}</p>
             <p>Catégorie : {{ program.category.name }}</p>
             {% for season in seasons %}
-            <p><a href="">Saison {{ season.number }}</a></p>
+            <p> <a href="{{ path('wild_show_season', { 'id' : season.id }) }}">Saison {{ season.number }}</a></p>
             {% endfor %}
         </div>
     </div>
