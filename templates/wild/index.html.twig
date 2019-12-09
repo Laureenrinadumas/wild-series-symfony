@@ -12,6 +12,15 @@
     {% else %}
         Aucune série trouvée.
     {% endfor %}
+    {{ form_start(form) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+        <div >
+            {{ form_row(form.searchField) }}
+        </div>
+    <button class="btn btn-warning"type="submit" name="btnSearch">Rechercher</button>
+    {{ form_end(form) }}
     <a href="{{ path('app_index') }}">
         Retour à l'accueil
     </a>
