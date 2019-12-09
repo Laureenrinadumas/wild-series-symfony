@@ -6,7 +6,7 @@
     <div class="container">
         <div >
             <h1>Category index</h1>
-            <a href="{{ path('category_new') }}">Ajouter une catégorie</a>
+            <button class="btn btn-danger"><a href="{{ path('category_new') }}">Ajouter une catégorie</a></button>
         </div>
     <ul>
              {% for category in categories %}
@@ -14,6 +14,6 @@
             {% endfor %}
     </ul>
     </div>
-    <a href="{{ path('wild_index') }}">Retour à l'accueil</a>
+    <button class="btn btn-warning"><a href="{{ path('wild_index') }}">Retour à l'accueil</a></button>
 
 {% endblock %}
