@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Program{% endblock %}
+
+{% block body %}
+    <h1>Créer une nouveau programme</h1>
+
+    {{ include('program/_form.html.twig') }}
+
+    <button class="btn btn-warning"><a href="{{ path('program_index') }}">Retour à la liste</a></button>
+{% endblock %}

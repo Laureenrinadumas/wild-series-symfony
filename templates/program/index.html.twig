@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Program index{% endblock %}
+
+{% block body %}
+    <h1>Programmes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Résumé</th>
+                <th>Poster</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for program in programs %}
+            <tr>
+                <td>{{ program.id }}</td>
+                <td>{{ program.title }}</td>
+                <td>{{ program.summary }}</td>
+                <td><img class="w-50" src="{{ program.poster }}" alt="poster"></td>
+                <td>
+                    <button class="btn btn-danger"><a href="{{ path('program_show', {'id': program.id}) }}">Montrer</a></button>
+                    <button class="btn btn-danger"><a href="{{ path('program_edit', {'id': program.id}) }}">Éditer</a></button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button class="btn btn-danger"><a href="{{ path('program_new') }}">Créer un nouveau programme</a></button>
+{% endblock %}

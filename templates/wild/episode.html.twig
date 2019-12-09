@@ -2,14 +2,15 @@
 {% block title %}Episodes{% endblock %}
 
 {% block body %}
+    {% include 'navbar.html.twig' %}
     <div class="block-main text-center">
         <h1 class="text-center">{{ program.title }}</h1>
         <p>Episode {{ episode.number }}: {{ episode.title }}</p>
         <p>Saison {{ season.id }}: {{ season.year }}</p>
         <p>{{ episode.synopsis }}</p>
     </div>
-    <a href="{{ path('wild_show_season', {'id' : season.id}) }}">
+    <button class="btn btn-warning"><a href="{{ path('wild_show_season', {'id' : season.id}) }}">
         Retour à la liste des épisodes
-    </a>
-    <a href="{{ path('wild_index') }}">Retour à l'accueil</a>
+    </a></button>
+    <button class="btn btn-warning"><a href="{{ path('wild_index') }}">Retour à l'accueil</a></button>
 {% endblock %}

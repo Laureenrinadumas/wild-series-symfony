@@ -2,6 +2,7 @@
 {% block title %}{{ program.title }}{% endblock %}
 
 {% block body %}
+    {% include 'navbar.html.twig' %}
     <div class="media">
         <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
         <div class="media-body">
@@ -12,5 +13,5 @@
             {% endfor %}
         </div>
     </div>
-    <a href="{{ path('wild_index') }}">Retour à l'accueil</a>
+    <button class="btn btn-warning"><a href="{{ path('wild_index') }}">Retour à l'accueil</a></button>
 {% endblock %}

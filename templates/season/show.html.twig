@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Season{% endblock %}
+
+{% block body %}
+    {% include 'navbar.html.twig' %}
+    <h1>Saisons</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ season.id }}</td>
+            </tr>
+            <tr>
+                <th>Numéro</th>
+                <td>{{ season.number }}</td>
+            </tr>
+            <tr>
+                <th>Année</th>
+                <td>{{ season.year }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ season.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-warning"><a href="{{ path('season_index') }}">Revenir à la liste</a></button>
+    <button class="btn btn-danger"><a href="{{ path('season_edit', {'id': season.id}) }}">Éditer</a></button>
+    {{ include('season/_delete_form.html.twig') }}
+{% endblock %}

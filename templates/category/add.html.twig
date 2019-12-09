@@ -7,6 +7,6 @@
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
     <div>
-        <a  href="{{ path('wild_index') }}">Retour à l'accueil</a>
+        <button class="btn btn-warning"><a  href="{{ path('wild_index') }}">Retour à l'accueil</a></button>
     </div>
 {% endblock %}
