@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actor{% endblock %}
+
+{% block body %}
+    <h1>Acteurs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ actor.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ actor.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% for program in programs %}
+        <a href="{{ path('wild_show', { 'slug': program.title }) }}">{{ program.title }}</a>
+    {% endfor %}
+    <a href="{{ path('actor_index') }}">back to list</a>
+
+    <a href="{{ path('actor_edit', {'id': actor.id}) }}">edit</a>
+
+    {{ include('actor/_delete_form.html.twig') }}
+{% endblock %}

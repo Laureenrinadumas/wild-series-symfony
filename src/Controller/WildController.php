@@ -73,16 +73,14 @@ class WildController extends AbstractController
         if (!$program) {
             throw $this->createNotFoundException('No program with ' . $slug . ' title, found in program\'s table.');
         }
-        $seasons = $this->getDoctrine()
-            ->getRepository(Season::class)
-            ->findBy([
-                'program' => $program,
-            ]);
+        $seasons = $program->getSeasons();
+        $actors = $program->getActors();
 
         return $this->render('wild/show.html.twig', [
             'program' => $program,
             'slug' => $slug,
             'seasons' => $seasons,
+            'actors' => $actors,
         ]);
     }
 
