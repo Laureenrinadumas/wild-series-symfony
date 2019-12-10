@@ -11,16 +11,23 @@
                 <th>Id</th>
                 <th>Titre</th>
                 <th>Résumé</th>
+                <th>Acteurs</th>
                 <th>Poster</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for program in programs %}
+
             <tr>
                 <td>{{ program.id }}</td>
                 <td>{{ program.title }}</td>
                 <td>{{ program.summary }}</td>
+                <td>{% for actor in program.actors %}
+                    <li>{{ actor.name }} </li>
+                {% else %}
+                    <li>Aucun acteur pour cette série</li>
+                {% endfor %}</td>
                 <td><img class="w-50" src="{{ program.poster }}" alt="poster"></td>
                 <td>
                     <button class="btn btn-danger"><a href="{{ path('program_show', {'id': program.id}) }}">Montrer</a></button>
