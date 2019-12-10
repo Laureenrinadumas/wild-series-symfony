@@ -24,6 +24,14 @@
             </tr>
         </tbody>
     </table>
+    <strong>Acteur :</strong>
+    <ul>
+        {% for actor in program.actors %}
+            <li>{{ actor.name }} </li>
+        {% else %}
+            <li>Aucun acteur pour cette série</li>
+        {% endfor %}
+    </ul>
     <div>
         <button class="btn btn-warning"><a href="{{ path('program_index') }}">Retout à la liste</a></button>
 
