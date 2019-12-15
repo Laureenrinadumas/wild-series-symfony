@@ -21,7 +21,7 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
             $season->setNumber($faker->unique()->numberBetween(1,20));
             $season->setYear($faker->year);
             $season->setDescription($faker->sentence(40));
-            $number = rand(0,4);
+            $number = rand(0,5);
             $season->setProgram($this->getReference('program_' . $number));
             $manager->persist($season);
             $this->addReference('season_' . $i, $season);
