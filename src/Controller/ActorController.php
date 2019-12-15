@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Actor;
 use App\Form\ActorType;
 use App\Repository\ActorRepository;
+use App\Service\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,8 +28,11 @@ class ActorController extends AbstractController
 
     /**
      * @Route("/new", name="actor_new", methods={"GET","POST"})
+     * @param Request $request
+     * @param Slugify $slugify
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Slugify $slugify): Response
     {
         $actor = new Actor();
         $form = $this->createForm(ActorType::class, $actor);
@@ -36,6 +40,7 @@ class ActorController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $actor->setSlug($slugify->generate($actor->getName()));
             $entityManager->persist($actor);
             $entityManager->flush();
 
@@ -49,7 +54,9 @@ class ActorController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="actor_show", methods={"GET"})
+     * @Route("/{slug}", name="actor_show", methods={"GET"})
+     * @param Actor $actor
+     * @return Response
      */
     public function show(Actor $actor): Response
     {
@@ -61,14 +68,19 @@ class ActorController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="actor_edit", methods={"GET","POST"})
+     * @Route("/{slug}/edit", name="actor_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Actor $actor
+     * @param Slugify $slugify
+     * @return Response
      */
-    public function edit(Request $request, Actor $actor): Response
+    public function edit(Request $request, Actor $actor, Slugify $slugify): Response
     {
         $form = $this->createForm(ActorType::class, $actor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $actor->setSlug($slugify->generate($actor->getName()));
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('actor_index');

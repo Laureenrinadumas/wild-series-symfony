@@ -25,6 +25,6 @@
         </tbody>
     </table>
     <button class="btn btn-warning"><a href="{{ path('episode_index') }}">Retour à la liste</a></button>
-    <button class="btn btn-danger"><a href="{{ path('episode_edit', {'id': episode.id}) }}">Éditer</a></button>
+    <button class="btn btn-danger"><a href="{{ path('episode_edit', {'slug': episode.slug}) }}">Éditer</a></button>
     {{ include('episode/_delete_form.html.twig') }}
 {% endblock %}
