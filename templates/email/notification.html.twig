@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
-{% block body %}
-    <h1> Bonjour</h1>
-    <p>Nous venons d'ajouter une série qui devrait vous plaire :</p>
 
-    <p>{{ program.title }}</p>
+{% block body %}
+    <h1>Hello !</h1>
+    <p>Le wild séries vient d'ajouter une série qui devrait vous plaire :</p>
+
+    <p>{{ program.title }} / {{ category.name }}</p>
     <img src="{{ program.poster }}" alt="program poster">
     <p>{{ program.summary }}</p>
     <a href="http://localhost:8000/wild/show/{{ program.slug }}"> Regarder</a>
