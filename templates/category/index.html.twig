@@ -4,16 +4,22 @@
 
 {% block body %}
     <div class="container">
-        <div >
-            <h1>Category index</h1>
-            <button class="btn btn-danger"><a href="{{ path('category_new') }}">Ajouter une catégorie</a></button>
+        <div>
+            <h1 class="m-5">Category index</h1>
+            <button class="btn btn-light mb-3"><a class="text-decoration-none link-button" href="{{ path('category_new') }}">Ajouter une catégorie</a></button>
         </div>
-    <ul>
+        <ul class="list-group" >
              {% for category in categories %}
-                <li>{{ category.id }} / {{ category.name }}</li>
+                <li class="list-group">{{ category.id }} ➔ {{ category.name }}</li>
             {% endfor %}
-    </ul>
+        </ul>
     </div>
-    <button class="btn btn-warning"><a href="{{ path('wild_index') }}">Retour à l'accueil</a></button>
+    <div class="d-flex justify-content-end m-4">
+        <button class="btn btn-warning">
+            <a class="text-decoration-none link-button" href="{{ path('wild_index') }}">
+                Accueil
+            </a>
+        </button>
+    </div>
 
 {% endblock %}

@@ -3,8 +3,8 @@
 {% block title %}Programs{% endblock %}
 
 {% block body %}
-    <h1>Toutes les séries : </h1>
-    <a href="{{ path('program_index') }}">Programme index</a>
+    <h1>Nos séries : </h1>
+    <a href="{{ path('program_index') }}">Index</a>
     {% for program in programs %}
         <div>
             <h2>{{ loop.index }} / <a href="{{ path('wild_show', { 'slug': program.title }) }}"> {{ program.title }}</a> - Catégorie : {{ program.category.name }}</h2>
@@ -13,16 +13,24 @@
     {% else %}
         Aucune série trouvée.
     {% endfor %}
-    {{ form_start(form) }}
-    <div class="my-custom-class-for-errors">
-        {{ form_errors(form) }}
-    </div>
-        <div >
-            {{ form_row(form.searchField) }}
+    <div class="col-3 d-flex justify-content-center">
+        <div class="form-group">
+        {{ form_start(form) }}
+            <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+            </div>
+            <div >
+                {{ form_row(form.searchField) }}
+            </div>
+            <button class="btn btn-warning" type="submit" name="btnSearch">Recherche</button>
+        {{ form_end(form) }}
         </div>
-    <button class="btn btn-warning"type="submit" name="btnSearch">Rechercher</button>
-    {{ form_end(form) }}
-    <button class="btn btn-warning"><a href="{{ path('app_index') }}">
-        Retour à l'accueil
-    </a></button>
+    </div>
+    <div class="d-flex justify-content-end m-4">
+        <button class="btn btn-warning">
+            <a class="text-decoration-none link-button" href="{{ path('app_index') }}">
+            Accueil
+            </a>
+        </button>
+    </div>
 {% endblock %}

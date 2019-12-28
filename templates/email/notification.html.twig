@@ -1,0 +1,24 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Pacifico|Raleway&display=swap');
+    body {
+        font-family: 'Raleway', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+        font-family: 'Pacifico', cursive;
+        color: #ef5e98;
+    }
+    img {
+        max-width: 400px;
+        margin: auto;
+    }
+</style>
+    <h1>Hello !</h1>
+    <p>Le wild séries vient d'ajouter une nouvelle série qui devrait vous plaire :</p>
+    <h3>{{ program.title }}</h3>
+    <img src="{{ program.poster }}" alt="program poster">
+    <p>{{ program.summary }}</p>
+    <a href="http://localhost:8000/wild/show/{{ program.slug }}"> Regarder</a>
