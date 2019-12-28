@@ -1,2 +1,2 @@
 # wild-series-symfony
-vidéo quête 16 service : https://www.loom.com/share/d830a77b7b684c65a61bfe97e9ccf04e
+vidéo quête 17 Envoi d'e-mail : https://www.loom.com/share/35fb6323648e4d29a3954922e5c8dc32
