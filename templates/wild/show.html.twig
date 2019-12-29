@@ -4,24 +4,24 @@
 
 {% block body %}
     <div class="d-flex justify-content-center mt-5">
-        <img class="w-50 shadow-lg p-3 mb-5 bg-white rounded" src="{{program.poster}}" alt="{{ program.title }} poster">
+        <img class="w-50 h-75 shadow-lg p-3 mb-5 bg-white rounded" src="{{program.poster}}" alt="{{ program.title }} poster">
         <div class="d-flex flex-column ml-4">
             <div class="mb-2">
                 <h1 class="mb-3">{{ program.title }}</h1>
                 <p class="text-justify">{{ program.summary }}</p>
             </div>
             <div>
-                <strong>Catégorie:</strong>
+                <p class="font-weight-bold">Catégorie:</p>
                 <p>{{ program.category.name }}</p>
             </div>
             <div>
-                <strong>Saisons:</strong>
+                <p  class="font-weight-bold">Saisons:</p>
                 {% for season in seasons %}
                     <p><a class="text-decoration-none link-button ml-4" href="{{ path('wild_show_season', { 'id' : season.id }) }}">Saison {{ season.number }}</a></p>
                 {% endfor %}
             </div>
             <div>
-                <strong>Acteurs:</strong>
+                <p  class="font-weight-bold">Acteurs:</p>
                 <ul class="list-group">
                     {% for actor in program.actors %}
                         <li class="list-group"><a class="text-decoration-none link-button ml-4" href="{{ path('actor_show', {'slug' : actor.slug}) }}">{{ actor.name }}</a></li>

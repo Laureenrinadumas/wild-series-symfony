@@ -4,10 +4,14 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\Comment;
 use App\Entity\Episode;
 use App\Entity\Program;
 use App\Entity\Season;
+use App\Entity\User;
+use App\Form\CommentType;
 use App\Form\ProgramSearchType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,9 +25,11 @@ class WildController extends AbstractController
 {
     /**
      * @Route("", name="index")
+     * @param Request $request
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function index(Request $request): Response
+    public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $programs = $this->getDoctrine()
             ->getRepository(Program::class)
@@ -38,11 +44,16 @@ class WildController extends AbstractController
             null,
             ['method' => Request::METHOD_GET]
         );
-
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $programs = $entityManager->getRepository(Program::class)
+                ->findBy(['title' => $data['searchField']]);
+        }
         return $this->render(
             'wild/index.html.twig', [
-            'programs' => $programs,
-            'form' => $form->createView(),
+            'programs'  => $programs,
+            'form'      => $form->createView(),
         ]
         );
     }
@@ -50,7 +61,7 @@ class WildController extends AbstractController
     /**
      * Getting a program with a formatted slug for title
      *
-     * @Route("/show/{slug<^[ a-zA-Z0-9-é]+$>}", defaults={"slug" = null}, name="show")
+     * @Route("/show/{slug}", defaults={"slug" = null}, name="show")
      * @param string $slug The slugger
      * @return Response
      */
@@ -59,19 +70,20 @@ class WildController extends AbstractController
         if (!$slug) {
             throw $this->createNotFoundException('No slug has been sent to find a program in program\'s table .');
         }
+
         $slug = preg_replace(
             '/-/',
             ' ',
             ucwords(trim(strip_tags($slug)),
-                '-')
-        );
+            "-"
+            ));
+
+
         $program = $this->getDoctrine()
             ->getRepository(Program::class)
-            ->findOneBy([
-                'title' => mb_strtolower($slug)
-            ]);
+            ->findOneBy(['title' => mb_strtolower($slug)]);
         if (!$program) {
-            throw $this->createNotFoundException('No program with ' . $slug . ' title, found in program\'s table.');
+            throw $this->createNotFoundException('No program with ' .$slug. ' title, found in program\'s table.');
         }
         $seasons = $program->getSeasons();
         $actors = $program->getActors();
@@ -153,16 +165,35 @@ class WildController extends AbstractController
     /**
      * @Route ("/episode/{id}", name="show_episode")
      * @param Episode $episode
+     * @param Request $request
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function showEpisode(Episode $episode): Response
+    public function showEpisode(Episode $episode, Request $request, EntityManagerInterface $entityManager) : Response
     {
         $season = $episode->getSeason();
         $program = $season->getProgram();
+        $comments = $episode->getComments();
+
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $author = $this->getUser();
+            $comment->setEpisode($episode);
+            $comment->setAuthor($author);
+            $entityManager->persist($comment);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('wild_show_episode',  ['id' => $episode->getId()]);
+        }
         return $this->render('wild/episode.html.twig', [
             'episode' => $episode,
             'season'  => $season,
             'program' => $program,
+            'comments' => $comments,
+            'form' => $form->createView(),
         ]);
     }
 }

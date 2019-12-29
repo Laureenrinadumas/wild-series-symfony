@@ -14,6 +14,7 @@ class Slugify
         $text = trim($text, '-');
         $text = preg_replace('~-+~', '-', $text);
         $text = strtolower($text);
+        $text = preg_replace( "/[:’]/", "", $input );
         if (empty($text)) {
             return 'n-a';
         }
