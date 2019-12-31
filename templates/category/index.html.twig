@@ -6,9 +6,9 @@
     <div class="container">
         <div>
             <h1 class="m-5">Category index</h1>
-            <button class="btn btn-light mb-3"><a class="text-decoration-none link-button" href="{{ path('category_new') }}">Ajouter une catégorie</a></button>
+            <button class="btn btn-danger mb-3"><a class="text-decoration-none link-button text-white" href="{{ path('category_new') }}">Ajouter une catégorie</a></button>
         </div>
-        <ul class="list-group" >
+        <ul class="list-group text-white" >
              {% for category in categories %}
                 <li class="list-group">{{ category.id }} ➔ {{ category.name }}</li>
             {% endfor %}

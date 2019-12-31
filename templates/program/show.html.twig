@@ -5,18 +5,18 @@
 {% block body %}
     <h1>Programmes</h1>
     <table class="table">
-        <tbody>
+        <tbody class="text-white">
             <tr>
                 <th>Id</th>
-                <td>{{ program.id }}</td>
+                <td class="text-white">{{ program.id }}</td>
             </tr>
             <tr>
                 <th>Titre</th>
-                <td>{{ program.title }}</td>
+                <td class="text-white">{{ program.title }}</td>
             </tr>
             <tr>
                 <th>Résumer</th>
-                <td>{{ program.summary }}</td>
+                <td class="text-white">{{ program.summary }}</td>
             </tr>
             <tr>
                 <th>Poster</th>
@@ -24,18 +24,20 @@
             </tr>
         </tbody>
     </table>
-    <strong>Acteur :</strong>
+    <p class="text-white">Acteur :</p>
     <ul>
         {% for actor in program.actors %}
-            <li>{{ actor.name }} </li>
+            <li class="text-white">{{ actor.name }} </li>
         {% else %}
-            <li>Aucun acteur pour cette série</li>
+            <li class="text-white">Aucun acteur pour cette série</li>
         {% endfor %}
     </ul>
-    <div>
-        <button class="btn btn-warning"><a href="{{ path('program_index') }}">Retour à la liste</a></button>
-
-        <button class="btn btn-danger"><a href="{{ path('program_edit', {'slug': program.slug}) }}">Éditer</a></button>
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-warning"><a class="text-decoration-none text-dark" href="{{ path('program_index') }}">Retour à la liste</a></button>
     </div>
-    {{ include('program/_delete_form.html.twig') }}
+    <div>
+        <button class="btn btn-danger"><a class="text-decoration-none text-white" href="{{ path('program_edit', {'slug': program.slug}) }}">Éditer</a></button>
+        {{ include('program/_delete_form.html.twig') }}
+    </div>
+
 {% endblock %}

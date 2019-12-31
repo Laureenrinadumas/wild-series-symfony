@@ -3,7 +3,9 @@
 
 {% block body %}
     <div class="media mt-5">
-        <img class="w-50 align-self-start" src="{{program.poster}}" alt="{{ program.title }} poster">
+        <div class="grayscale ">
+            <img class="img-poster shadow-lg p-3 mb-5 bg-dark" src="{{program.poster}}" alt="{{ program.title }} poster">
+        </div>
         <div class="ml-3">
             <h1 class="m-2">{{ program.title }}</h1>
             <p class="text-justify text-white mt-3">{{ program.summary }}</p>

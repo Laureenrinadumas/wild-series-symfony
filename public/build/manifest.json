@@ -3,9 +3,6 @@
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
   "build/vendors~app.js": "/build/vendors~app.js",
-  "build/images/backgroundws.png": "/build/images/backgroundws.4da46aa6.png",
-  "build/images/background.png": "/build/images/background.89d5b551.png",
-  "build/images/logo.png": "/build/images/logo.427574b8.png",
-  "build/images/backG.png": "/build/images/backG.5a6d09c3.png",
-  "build/images/backGws.png": "/build/images/backGws.d9c2138c.png"
+  "build/images/backGws.png": "/build/images/backGws.d9c2138c.png",
+  "build/images/logo.png": "/build/images/logo.427574b8.png"
 }

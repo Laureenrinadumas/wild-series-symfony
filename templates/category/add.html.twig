@@ -2,11 +2,14 @@
 {% block title %}Ajouter une catégorie{% endblock %}
 
 {% block body %}
+    <h2 class="mt-5">Ajouter une nouvelle catégorie</h2>
+    <div class="mt-5 text-white">
 {{ form_start(form) }}
     {{ form_row(form.name) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn btn-danger text-white">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-    <div>
-        <button class="btn btn-warning"><a  href="{{ path('wild_index') }}">Retour à l'accueil</a></button>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <button class="btn btn-warning"><a class="text-decoration-none text-dark" href="{{ path('wild_index') }}">Accueil</a></button>
     </div>
 {% endblock %}
