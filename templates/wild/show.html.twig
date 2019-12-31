@@ -4,29 +4,31 @@
 
 {% block body %}
     <div class="d-flex justify-content-center mt-5">
-        <img class="w-50 h-75 shadow-lg p-3 mb-5 bg-white rounded" src="{{program.poster}}" alt="{{ program.title }} poster">
+        <div class="grayscale ">
+        <img class="img-poster shadow-lg p-3 mb-5 bg-dark" src="{{program.poster}}" alt="{{ program.title }} poster">
+        </div>
         <div class="d-flex flex-column ml-4">
             <div class="mb-2">
                 <h1 class="mb-3">{{ program.title }}</h1>
-                <p class="text-justify">{{ program.summary }}</p>
+                <p class="text-justify text-white">{{ program.summary }}</p>
             </div>
             <div>
-                <p class="font-weight-bold">Catégorie:</p>
-                <p>{{ program.category.name }}</p>
+                <p class="font-weight-bold text-white">Catégorie :</p>
+                <p class="text-white">{{ program.category.name }}</p>
             </div>
             <div>
-                <p  class="font-weight-bold">Saisons:</p>
+                <p  class="font-weight-bold text-white">Saisons :</p>
                 {% for season in seasons %}
-                    <p><a class="text-decoration-none link-button ml-4" href="{{ path('wild_show_season', { 'id' : season.id }) }}">Saison {{ season.number }}</a></p>
+                    <p><a class="text-decoration-none link-button ml-4 text-white" href="{{ path('wild_show_season', { 'id' : season.id }) }}">Saison {{ season.number }}</a></p>
                 {% endfor %}
             </div>
             <div>
-                <p  class="font-weight-bold">Acteurs:</p>
+                <p  class="font-weight-bold text-white">Acteurs :</p>
                 <ul class="list-group">
                     {% for actor in program.actors %}
-                        <li class="list-group"><a class="text-decoration-none link-button ml-4" href="{{ path('actor_show', {'slug' : actor.slug}) }}">{{ actor.name }}</a></li>
+                        <li class="list-group"><a class="text-decoration-none link-button ml-4 text-white" href="{{ path('actor_show', {'slug' : actor.slug}) }}">{{ actor.name }}</a></li>
                     {% else %}
-                        <li>Oups! pas d'acteur pour cette série</li>
+                        <li class="text-white">Oups! pas d'acteur pour cette série</li>
                     {% endfor %}
                 </ul>
             </div>
