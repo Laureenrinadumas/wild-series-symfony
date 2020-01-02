@@ -38,8 +38,7 @@ security:
 
     access_control:
         - { path: ^/program, roles: ROLE_ADMIN }
-        - { path: ^/category, roles: ROLE_ADMIN }
-        - { path: ^/episode, roles: ROLE_ADMIN }
-        - { path: ^/actor, roles: ROLE_ADMIN }
         - { path: ^/season, roles: ROLE_ADMIN }
+        - { path: ^/actor, roles: ROLE_ADMIN }
+        - { path: ^/episode, roles: ROLE_ADMIN }
         - { path: ^/comment, roles: ROLE_ADMIN }

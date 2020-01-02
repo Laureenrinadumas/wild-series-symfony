@@ -35,7 +35,7 @@
         </div>
     </div>
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+        <button class="btn btn-danger"><a class="text-decoration-none text-white" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a></button>
     {% endif %}
     <div class="d-flex justify-content-end m-4">
         <button class="btn btn-warning">

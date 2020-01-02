@@ -196,5 +196,40 @@ class WildController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/comment/{id}/edit", name="comment_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Comment $comment
+     * @return Response
+     */
+    public function editComment(Request $request, Comment $comment): Response
+    {
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            return $this->redirectToRoute('wild_show_episode', ['id' => $comment->getEpisode()->getId()]);
+        }
+        return $this->render('wild/comment/edit.html.twig', [
+            'comment' => $comment,
+            'form' => $form->createView(),
+        ]);
+    }
+    /**
+     * @Route("/comment/{id}", name="comment_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Comment $comment
+     * @return Response
+     */
+    public function deleteComment(Request $request, Comment $comment): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($comment);
+            $entityManager->flush();
+        }
+        return $this->redirectToRoute('wild_show_episode',  ['id' => $comment->getEpisode()->getId()]);
+    }
 }
 
