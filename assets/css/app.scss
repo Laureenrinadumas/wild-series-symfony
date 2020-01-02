@@ -1,6 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Raleway&display=swap');
+@import "home";
+@import "show";
 
 $font-title: 'Pacifico', cursive;
 $font-paragraph:'Raleway', sans-serif;
@@ -12,10 +14,17 @@ $link-color: #111;
 body {
     background-color: $body-bg;
     font-family: $font-paragraph;
+    color: $body-bg;
 }
-h1, h2, h3, h4, h5, h6{
+
+h1, h2{
+    text-align: center;
     font-family: $font-title;
     color: $font-color-nav;
+}
+h3, h4, h5, h6{
+    font-family: $font-title;
+    color: $body-bg;
 }
 
 a.nav-link{
@@ -31,5 +40,10 @@ a.navbar-brand {
 i.fa-user-secret{
     color: $body-bg;
 }
+.navbar-custom{
+    background-color: $body-color;
+}
+
+
 
 

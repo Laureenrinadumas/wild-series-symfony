@@ -27,6 +27,17 @@ class UserFixtures extends Fixture
 
         $manager->persist($subscriber);
 
+        // Création d’un utilisateur de type “auteur”
+        $subscriberPro = new User();
+        $subscriberPro->setEmail('laureen262@gmail.com');
+        $subscriberPro->setRoles(['ROLE_SUBSCRIBER']);
+        $subscriberPro->setPassword($this->passwordEncoder->encodePassword(
+            $subscriberPro,
+            'laupassword'
+        ));
+
+        $manager->persist($subscriberPro);
+
         // Création d’un utilisateur de type “administrateur”
         $admin = new User();
         $admin->setEmail('admin@monsite.com');
@@ -38,9 +49,8 @@ class UserFixtures extends Fixture
 
         $manager->persist($admin);
 
-        // Sauvegarde des 2 nouveaux utilisateurs :
+        // Sauvegarde des 3 nouveaux utilisateurs :
         $manager->flush();
 
-        $manager->flush();
     }
 }

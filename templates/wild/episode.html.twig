@@ -4,19 +4,22 @@
 {% block body %}
     <div class="block-main text-center">
         <h1 class="text-center">{{ program.title }}</h1>
-        <p class="font-weight-bold">Episode {{ episode.number }}: {{ episode.title }}</p>
-        <p  class="font-weight-bold">Saison {{ season.id }}: {{ season.year }}</p>
-        <p>{{ episode.synopsis }}</p>
+        <p class="font-weight-bold text-white">Episode {{ episode.number }}: {{ episode.title }}</p>
+        <p  class="font-weight-bold text-white">Saison {{ season.id }}: {{ season.year }}</p>
+        <p class="text-white">{{ episode.synopsis }}</p>
     </div>
     <div>
         <h3>Commentaires</h3>
         {% for comment in comments %}
             <div>
                 <ul class="list-unstyled">
-                    <li>Episode : {{ program.title }} - {{ comment.episode.title }}</li>
-                    <li>Auteur : {{ comment.author.username }}</li>
-                    <li>Commentaire : {{ comment.comment }}</li>
-                    <li>Note : {{ comment.rate }}</li>
+                    <li class="text-white">Episode : {{ program.title }} - {{ comment.episode.title }}</li>
+                    <li class="text-white">Auteur : {{ comment.author.username }}</li>
+                    <li class="text-white">Commentaire : {{ comment.comment }}</li>
+                    <li class="text-white">Note : {{ comment.rate }}</li>
+                    {% if app.user.id is defined and app.user.id == comment.author.id or is_granted('ROLE_ADMIN') %}
+                        <li><a href="{{ path('wild_comment_edit', {'id': comment.id}) }}">Supprimer</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <br>
@@ -25,13 +28,15 @@
 
     {% if app.user %}
         <h3>Ajouter un commentaire</h3>
+        <div class="text-white">
         {{ form_start(form) }}
         {{ form_widget(form) }}
         <button class="btn btn-warning">Ajouter</button>
         {{ form_end(form) }}
+        </div>
     {% endif %}
-    <button class="btn btn-warning"><a href="{{ path('wild_show_season', {'id' : season.id}) }}">
+    <button class="btn btn-warning mt-5"><a class="text-decoration-none text-dark" href="{{ path('wild_show_season', {'id' : season.id}) }}">
         Retour à la liste des épisodes
     </a></button>
-    <button class="btn btn-warning"><a href="{{ path('wild_index') }}">Retour à l'accueil</a></button>
+    <button class="btn btn-warning mt-5"><a class="text-decoration-none text-dark" href="{{ path('wild_index') }}">Accueil</a></button>
 {% endblock %}

@@ -6,13 +6,13 @@
     <h1 class="m-4">Programme index</h1>
     <div class="d-flex justify-content-end m-4">
     <button class="btn btn-warning">
-        <a class="text-decoration-none link-button" href="{{ path('program_new') }}">
+        <a class="text-decoration-none text-dark" href="{{ path('program_new') }}">
             Créer un nouveau programme
         </a>
     </button>
     </div>
     <table  class="table">
-        <thead class="thead-dark">
+        <thead class="thead-dark text-white">
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Titre</th>
@@ -25,29 +25,28 @@
         <tbody>
         {% for program in programs %}
             <tr>
-                <td>{{ program.id }}</td>
-                <td>{{ program.title }}</td>
-                <td>{{ program.summary }}</td>
-                <td>
+                <td class="text-white">{{ program.id }}</td>
+                <td class="text-white">{{ program.title }}</td>
+                <td class="text-white text-justify w-50">{{ program.summary }}</td>
+                <td class="text-white w-25">
+                    {% for actor in program.actors %}
+                    <li class="list-unstyled">
 
-                        <li class="list-unstyled">
-                            {% for actor in program.actors %}
-                            {{ actor.name }}
-                        </li>
-
-                    {% else %}
-                        <li>Oups pas d'acteur pour cette série</li>
+                       {{ actor.name }}
+                    </li>
+                        {% else %}
+                        <li class="text-white">Oups pas d'acteur pour cette série</li>
                     {% endfor %}
                 </td>
                 <td><img class="w-50" src="{{ program.poster }}" alt="poster"></td>
                 <td>
-                    <a href="{{ path('program_show', {'slug': program.slug}) }}">Montrer</a>
-                    <a href="{{ path('program_edit', {'slug': program.slug}) }}">Éditer</a>
+                    <a class="text-decoration-none text-success" href="{{ path('program_show', {'slug': program.slug}) }}">Voir</a>
+                    <a class="text-decoration-none text-success" href="{{ path('program_edit', {'slug': program.slug}) }}">Éditer</a>
                 </td>
             </tr>
-        {% else %}
+            {% else %}
             <tr>
-                <td colspan="5">Aucun enregistrement trouvé</td>
+                <td class="text-white" colspan="5">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

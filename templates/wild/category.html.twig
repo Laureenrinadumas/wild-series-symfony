@@ -2,7 +2,6 @@
 {% block title %}Category{% endblock %}
 
 {% block body %}
-    {% include 'navbar.html.twig' %}
     <h1>Catégorie : {{ category.name }} :</h1>
     {% for program in programs %}
         <div>
@@ -13,6 +12,6 @@
         Aucune série trouvée
     {% endfor %}
     <button class="btn btn-warning"><a href="{{ path('wild_index') }}">
-        Retour à l'accueil
+        Accueil
     </a></button>
 {% endblock %}
