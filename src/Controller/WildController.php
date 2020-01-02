@@ -52,9 +52,9 @@ class WildController extends AbstractController
         }
         return $this->render(
             'wild/index.html.twig', [
-            'programs'  => $programs,
-            'form'      => $form->createView(),
-        ]
+                'programs' => $programs,
+                'form' => $form->createView(),
+            ]
         );
     }
 
@@ -75,7 +75,7 @@ class WildController extends AbstractController
             '/-/',
             ' ',
             ucwords(trim(strip_tags($slug)),
-            "-"
+                "-"
             ));
 
 
@@ -83,7 +83,7 @@ class WildController extends AbstractController
             ->getRepository(Program::class)
             ->findOneBy(['title' => mb_strtolower($slug)]);
         if (!$program) {
-            throw $this->createNotFoundException('No program with ' .$slug. ' title, found in program\'s table.');
+            throw $this->createNotFoundException('No program with ' . $slug . ' title, found in program\'s table.');
         }
         $seasons = $program->getSeasons();
         $actors = $program->getActors();
@@ -152,24 +152,24 @@ class WildController extends AbstractController
         $program = $season->getProgram();
         $episodes = $season->getEpisodes();
         if (!$season) {
-            throw $this->createNotFoundException('No season found with '.$id.' in Season\'s table.');
+            throw $this->createNotFoundException('No season found with ' . $id . ' in Season\'s table.');
         }
 
         return $this->render('wild/season.html.twig', [
-            'program'  => $program,
-            'season'   => $season,
+            'program' => $program,
+            'season' => $season,
             'episodes' => $episodes,
         ]);
     }
 
     /**
-     * @Route ("/episode/{id}", name="show_episode")
+     * @Route ("/episode/{id}", name="show_episode", methods={"GET","POST"})
      * @param Episode $episode
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function showEpisode(Episode $episode, Request $request, EntityManagerInterface $entityManager) : Response
+    public function showEpisode(Episode $episode, Request $request, EntityManagerInterface $entityManager): Response
     {
         $season = $episode->getSeason();
         $program = $season->getProgram();
@@ -186,16 +186,15 @@ class WildController extends AbstractController
             $entityManager->persist($comment);
             $entityManager->flush();
 
-            return $this->redirectToRoute('wild_show_episode',  ['id' => $episode->getId()]);
+            return $this->redirectToRoute('wild_show_episode', ['id' => $episode->getId()]);
         }
         return $this->render('wild/episode.html.twig', [
             'episode' => $episode,
-            'season'  => $season,
+            'season' => $season,
             'program' => $program,
             'comments' => $comments,
             'form' => $form->createView(),
         ]);
     }
 }
-
 

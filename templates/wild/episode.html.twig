@@ -17,9 +17,7 @@
                     <li class="text-white">Auteur : {{ comment.author.username }}</li>
                     <li class="text-white">Commentaire : {{ comment.comment }}</li>
                     <li class="text-white">Note : {{ comment.rate }}</li>
-                    {% if app.user.id is defined and app.user.id == comment.author.id%}
-                        <li><a class="text-decoration-none text-danger" href="{{ path('comment_delete', {'id': comment.id}) }}">Supprimer</a></li>
-                    {% endif %}
+
                 </ul>
             </div>
             <br>
