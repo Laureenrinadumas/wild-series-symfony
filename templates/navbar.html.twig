@@ -8,19 +8,37 @@
                 <li class="nav-item active">
                     <a class="nav-link text-white" href="{{ path('wild_index') }}">Séries<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link text-white" href="{{ path('category_index') }}">Catégories<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link text-white" href="{{ path('actor_index') }}">Acteurs<span class="sr-only">(current)</span></a>
-                </li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                Admin
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ path('category_index') }}">Catégories</a>
+                                <a class="dropdown-item" href="{{ path('program_index') }}">Séries</a>
+                                <a class="dropdown-item" href="{{ path('season_index') }}">Saisons</a>
+                                <a class="dropdown-item" href="{{ path('episode_index') }}">Episodes</a>
+                                <a class="dropdown-item" href="{{ path('actor_index') }}">Acteurs</a>
+                            </div>
+                        </li>
+                    </ul>
+                {% endif %}
             </ul>
-           <div class="text-white mr-2">
+           <div class="d-flex justify-content-end text-white mr-2">
             {% if app.user %}
-                Hello {{ app.user.email }}
-                <a class="text-danger text-decoration-none ml-4" href="{{ path('app_logout') }}">Se déconnecter</a>
+                <li class="nav-item nav-link active">
+                    Hello {{ app.user.email }}
+                </li>
+                    <a class="nav-link text-white text-decoration-none" href="{{ path('wild_profile') }}">Mon compte</a>
+
+                <a class="nav-link text-white text-decoration-none ml-4" href="{{ path('app_logout') }}">Se déconnecter</a>
             {% else %}
-                <a class="text-warning text-decoration-none" href="{{ path('app_login') }}">Se connecter</a>
+                <a class="nav-link text-white text-decoration-none" href="{{ path('app_register') }}"> S'inscrire</a>
+
+                <a class="nav-link text-white text-decoration-none" href="{{ path('app_login') }}">Se connecter</a>
             {% endif %}
             </div>
         </div>
