@@ -4,8 +4,10 @@
 
 {% block body %}
     <h1>Créer un épisode</h1>
-
     {{ include('episode/_form.html.twig') }}
-
-    <button class="btn btn-warning"><a href="{{ path('episode_index') }}">Retour à la liste</a></button>
+    <div class="d-flex justify-content-center mt-5">
+        <button class="btn btn-warning">
+            <a class="text-dark text-decoration-none" href="{{ path('episode_index') }}">Retour</a>
+        </button>
+    </div>
 {% endblock %}

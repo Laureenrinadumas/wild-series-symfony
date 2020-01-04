@@ -3,11 +3,13 @@
 {% block title %}Episode index{% endblock %}
 
 {% block body %}
-    <h1>Episode index</h1>
-
+    <h1>L'index des épisodes</h1>
+    <div class="d-flex justify-content-end m-4">
+        <button class="btn btn-warning"><a class="text-dark text-decoration-none" href="{{ path('episode_new') }}">Créer un nouvel épisode</a></button>
+    </div>
     <table class="table">
         <thead>
-            <tr>
+            <tr class="text-white">
                 <th>Id</th>
                 <th>Titre</th>
                 <th>Numéro</th>
@@ -17,14 +19,14 @@
         </thead>
         <tbody>
         {% for episode in episodes %}
-            <tr>
+            <tr class="text-white">
                 <td>{{ episode.id }}</td>
                 <td>{{ episode.title }}</td>
                 <td>{{ episode.number }}</td>
                 <td>{{ episode.synopsis }}</td>
                 <td>
-                    <button class="btn btn-danger"><a href="{{ path('episode_show', {'slug': episode.slug}) }}">Montrer</a></button>
-                    <button class="btn btn-danger"><a href="{{ path('episode_edit', {'slug': episode.slug}) }}">Éditer</a></button>
+                    <a class="text-info text-decoration-none" href="{{ path('episode_show', {'slug': episode.slug}) }}">Voir</a>
+                    <a class="text-info text-decoration-none" href="{{ path('episode_edit', {'slug': episode.slug}) }}">Éditer</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +37,4 @@
         </tbody>
     </table>
 
-    <button class="btn btn-warning"><a href="{{ path('episode_new') }}">Créer un nouvel épisode</a></button>
 {% endblock %}

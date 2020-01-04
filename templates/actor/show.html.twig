@@ -4,8 +4,7 @@
 
 {% block body %}
     <h1>Acteurs</h1>
-
-    <table class="table">
+    <table class="table text-white">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -21,12 +20,25 @@
             </tr>
         </tbody>
     </table>
-    {% for program in programs %}
-        <a href="{{ path('wild_show', { 'slug': program.title }) }}">{{ program.title }}</a>
-    {% endfor %}
-    <a href="{{ path('actor_index') }}">back to list</a>
-
-    <a href="{{ path('actor_edit', {'slug': actor.slug}) }}">edit</a>
-
-    {{ include('actor/_delete_form.html.twig') }}
+    <div  class="d-flex align-self-start">
+        <p>Cette|Cet actrice|acteur tient un rôle dans cette série :</p>
+        <ul>
+        {% for program in programs %}
+            <li class="text-white list-unstyled">
+                <a class="text-decoration-none text-white" href="{{ path('wild_show', { 'slug': program.title }) }}">{{ program.title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="d-flex align-self-end">
+        <button class="btn btn-danger mr-4">
+            <a class="text-white text-decoration-none" href="{{ path('actor_edit', {'slug': actor.slug}) }}">edit</a>
+        </button>
+        {{ include('actor/_delete_form.html.twig') }}
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <button class="text-dark btn btn-warning">
+            <a class="text-dark text-decoration-none" href="{{ path('actor_index') }}">Retour</a>
+        </button>
+    </div>
 {% endblock %}

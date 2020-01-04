@@ -3,33 +3,33 @@
 {% block title %}Actor index{% endblock %}
 
 {% block body %}
-    <h1>Acteur index</h1>
-
+    <h1>L'index des acteurs</h1>
+    <div class="d-flex justify-content-end m-4">
+        <button class="btn btn-warning"><a class="text-dark text-decoration-none" href="{{ path('actor_new') }}">Créer un nouvel acteur</a></button>
+    </div>
     <table class="table">
         <thead>
-            <tr>
+            <tr class="text-white">
                 <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for actor in actors %}
-            <tr>
+            <tr class="text-white">
                 <td>{{ actor.id }}</td>
                 <td>{{ actor.name }}</td>
                 <td>
-                    <a href="{{ path('actor_show', {'slug': actor.slug}) }}">show</a>
-                    <a href="{{ path('actor_edit', {'slug': actor.slug}) }}">edit</a>
+                    <a class="text-info text-decoration-none" href="{{ path('actor_show', {'slug': actor.slug}) }}">Voir</a>
+                    <a class="text-info text-decoration-none" href="{{ path('actor_edit', {'slug': actor.slug}) }}">Éditer</a>
                 </td>
             </tr>
         {% else %}
-            <tr>
+            <tr class="text-danger">
                 <td colspan="3">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    <a href="{{ path('actor_new') }}">Créer un nouvel acteur</a>
-    <button class="btn btn-warning"><a href="{{ path('wild_index') }}">Revenir à toutes les séries</a></button>
 {% endblock %}

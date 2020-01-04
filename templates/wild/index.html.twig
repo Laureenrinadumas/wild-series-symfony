@@ -4,7 +4,6 @@
 
 {% block body %}
     <h1>Nos séries : </h1>
-    <a href="{{ path('program_index') }}">Index</a>
     {% for program in programs %}
         <div>
             <h2>{{ loop.index }} - <a class="text-decoration-none text-white" href="{{ path('wild_show', { 'slug': program.slug }) }}"> {{ program.title }}</a></h2>

@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Episode</h1>
-    <table class="table">
+    <table class="table text-white">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -24,7 +24,15 @@
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-warning"><a href="{{ path('episode_index') }}">Retour à la liste</a></button>
-    <button class="btn btn-danger"><a href="{{ path('episode_edit', {'slug': episode.slug}) }}">Éditer</a></button>
-    {{ include('episode/_delete_form.html.twig') }}
+    <div class="d-flex align-self-end">
+        <button class="btn btn-danger mr-4">
+            <a class="text-white" href="{{ path('episode_edit', {'slug': episode.slug}) }}">Éditer</a>
+        </button>
+        {{ include('episode/_delete_form.html.twig') }}
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <button class="btn btn-warning">
+            <a class="text-dark text-decoration-none" href="{{ path('episode_index') }}">Retour</a>
+        </button>
+    </div>
 {% endblock %}
