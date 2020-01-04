@@ -3,9 +3,11 @@
 {% block title %}New Program{% endblock %}
 
 {% block body %}
-    <h1>Créer une nouveau programme</h1>
-
+    <h1>Créer un nouveau programme</h1>
     {{ include('program/_form.html.twig') }}
-
-    <button class="btn btn-warning"><a href="{{ path('program_index') }}">Retour à la liste</a></button>
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-warning">
+            <a class="text-dark text-decoration-none" href="{{ path('program_index') }}">Retour</a>
+        </button>
+    </div>
 {% endblock %}

@@ -4,7 +4,10 @@
 
 {% block body %}
     <h1>Créer un nouvel acteur</h1>
-
     {{ include('actor/_form.html.twig') }}
-    <a href="{{ path('actor_index') }}">back to list</a>
+    <div class="d-flex justify-content-center mt-5">
+        <button class="text-dark btn btn-warning">
+            <a class="text-dark text-decoration-none" href="{{ path('actor_index') }}">Retour</a>
+        </button>
+    </div>
 {% endblock %}

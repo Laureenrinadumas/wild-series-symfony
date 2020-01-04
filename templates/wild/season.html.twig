@@ -4,7 +4,7 @@
 {% block body %}
     <div class="media mt-5">
         <div class="grayscale ">
-            <img class="img-poster shadow-lg p-3 mb-5 bg-dark" src="{{program.poster}}" alt="{{ program.title }} poster">
+            <img class="img-poster shadow-lg p-3 mb-5" src="{{program.poster}}" alt="{{ program.title }} poster">
         </div>
         <div class="ml-3">
             <h1 class="m-2">{{ program.title }}</h1>
@@ -12,9 +12,11 @@
             {% for episode in episodes %}
                 <h4><a class="text-decoration-none text-white m-3" href="{{ path('wild_show_episode', {'id' : episode.id}) }}">Épisode {{ episode.number }}: {{ episode.title }}</a></h4>
             {% endfor %}
-            <button class="btn btn-warning mt-4"><a class="text-decoration-none text-dark" href="{{ path('episode_new') }}">Ajouter un épisode</a></button>
+            {% if is_granted('ROLE_ADMIN') %}
+            <button class="btn btn-danger mt-4"><a class="text-decoration-none text-white" href="{{ path('episode_new') }}">Ajouter un épisode</a></button>
+            {% endif %}
         </div>
     </div>
-    <button class="btn btn-warning m-3"><a class="text-decoration-none text-dark"  href="{{ path('wild_show', {'slug' : program.slug }) }}">Retour</a></button>
+    <button class="btn btn-warning m-3"><a class="text-decoration-none text-dark"  href="{{ path('wild_show', {'slug' : program.slug }) }}">Retour aux saisons</a></button>
     <button class="btn btn-warning m-3"><a class="text-decoration-none text-dark" href="{{ path('wild_index') }}">Accueil</a></button>
 {% endblock %}

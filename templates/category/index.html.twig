@@ -5,21 +5,15 @@
 {% block body %}
     <div class="container">
         <h1 class="m-5">L'index des catégories</h1>
+            <div class="d-flex justify-content-end m-4">
+                <button class="btn btn-warning mb-3">
+                    <a class="text-dark text-decoration-none" href="{{ path('category_new') }}">Créer une nouvelle catégorie</a>
+                </button>
+            </div>
         <ul class="list-group text-white" >
              {% for category in categories %}
                 <li class="list-group">{{ category.id }} ➔ {{ category.name }}</li>
             {% endfor %}
         </ul>
     </div>
-    <div class="mt-5">
-        <button class="btn btn-danger mb-3"><a class="text-decoration-none link-button text-white" href="{{ path('category_new') }}">Ajouter une catégorie</a></button>
-    </div>
-    <div class="d-flex justify-content-end m-4">
-        <button class="btn btn-warning">
-            <a class="text-decoration-none link-button" href="{{ path('wild_index') }}">
-                Accueil
-            </a>
-        </button>
-    </div>
-
 {% endblock %}

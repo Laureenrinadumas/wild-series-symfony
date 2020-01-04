@@ -4,12 +4,12 @@
 {% block body %}
     <h2 class="mt-5">Ajouter une nouvelle catégorie</h2>
     <div class="mt-5 text-white">
-{{ form_start(form) }}
-    {{ form_row(form.name) }}
-    <button class="btn btn-danger text-white">{{ button_label|default('Enregistrer') }}</button>
-{{ form_end(form) }}
+        {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            <button class="btn btn-danger text-white">{{ button_label|default('Enregistrer') }}</button>
+        {{ form_end(form) }}
     </div>
     <div class="d-flex justify-content-center mt-5">
-        <button class="btn btn-warning"><a class="text-decoration-none text-dark" href="{{ path('wild_index') }}">Accueil</a></button>
+        <button class="btn btn-warning"><a class="text-decoration-none text-dark" href="{{ path('category_index') }}">Retour</a></button>
     </div>
 {% endblock %}

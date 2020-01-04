@@ -3,10 +3,13 @@
 {% block title %}Season index{% endblock %}
 
 {% block body %}
-    <h1>Saison index</h1>
+    <h1>L'index des saisons</h1>
+    <div class="d-flex justify-content-end m-4">
+        <button class="btn btn-warning"><a class="text-dark text-decoration-none" href="{{ path('season_new') }}">Créer une nouvelle saison</a></button>
+    </div>
     <table class="table">
         <thead>
-            <tr>
+            <tr class="text-white">
                 <th>Id</th>
                 <th>Numéro</th>
                 <th>Année</th>
@@ -16,14 +19,14 @@
         </thead>
         <tbody>
         {% for season in seasons %}
-            <tr>
+            <tr class="text-white">
                 <td>{{ season.id }}</td>
                 <td>{{ season.number }}</td>
                 <td>{{ season.year }}</td>
                 <td>{{ season.description }}</td>
                 <td>
-                    <button class="btn btn-danger"><a href="{{ path('season_show', {'id': season.id}) }}">Montrer</a></button>
-                    <button class="btn btn-danger"><a href="{{ path('season_edit', {'id': season.id}) }}">Éditer</a></button>
+                    <a class="text-info" href="{{ path('season_show', {'id': season.id}) }}">Voir</a>
+                    <a class="text-info" href="{{ path('season_edit', {'id': season.id}) }}">Éditer</a>
                 </td>
             </tr>
         {% else %}
@@ -34,5 +37,4 @@
         </tbody>
     </table>
 
-    <button class="btn btn-warning"><a href="{{ path('season_new') }}">Créer une nouvelle saison</a></button>
 {% endblock %}
