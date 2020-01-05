@@ -29,11 +29,10 @@
                 <td class="w-25">
                     {% for actor in program.actors %}
                     <li class="list-unstyled">
-
-                       {{ actor.name }}
+                        <a class="text-decoration-none text-white" href="{{ path('actor_show', {'slug': actor.slug}) }}">{{ actor.name }}</a>
                     </li>
                         {% else %}
-                        <li class="text-white">Oups pas d'acteur pour cette série</li>
+                        <li class="text-white">Oups! pas d'acteur pour cette série</li>
                     {% endfor %}
                 </td>
                 <td><img class="w-50" src="{{ program.poster }}" alt="poster"></td>

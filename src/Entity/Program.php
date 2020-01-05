@@ -22,7 +22,7 @@ class Program
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="ne me laisse pas tout vide")
      * @Assert\Length(max="255", maxMessage = "Le titre saisi {{ value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
      */
