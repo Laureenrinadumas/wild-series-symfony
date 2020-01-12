@@ -9,9 +9,9 @@ $font-title: 'Pacifico', cursive;
 $font-paragraph:'Raleway', sans-serif;
 $body-bg: #FFF;
 $body-color: #111;
-$font-color-nav: #ef5e98;
+$pink: #ef5e98;
 $link-color: #111;
-
+$yellow : #FFEE39;
 body {
     background-color: $body-bg;
     font-family: $font-paragraph;
@@ -21,7 +21,7 @@ body {
 h1, h2{
     text-align: center;
     font-family: $font-title;
-    color: $font-color-nav;
+    color: $pink;
 }
 h3, h4, h5, h6{
     font-family: $font-title;
@@ -43,6 +43,16 @@ i.fa-user-secret{
 }
 .navbar-custom{
     background-color: $body-color;
+}
+
+.btn-warning {
+    background-color: $yellow;
+    border-radius: 6rem;
+}
+
+.btn-danger {
+    background-color: $pink ;
+    border-radius: 6rem;
 }
 
 
