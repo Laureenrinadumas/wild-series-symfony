@@ -44,6 +44,8 @@ class ActorController extends AbstractController
             $entityManager->persist($actor);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Une/un nouvel/nouvelle acteur/actrice a bien été ajouté/ajoutée');
+
             return $this->redirectToRoute('actor_index');
         }
 
