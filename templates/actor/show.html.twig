@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Actor{% endblock %}
+{% block title %}{{ 'Actor.title'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Acteurs</h1>
+    <h1>{{ 'actors.title'|trans }}</h1>
     <table class="table text-white">
         <tbody>
             <tr>
@@ -11,7 +11,7 @@
                 <td>{{ actor.id }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
+                <th>{{ 'name.actor'|trans }}</th>
                 <td>{{ actor.name }}</td>
             </tr>
             <tr>
@@ -21,7 +21,7 @@
         </tbody>
     </table>
     <div  class="d-flex align-self-start">
-        <p>Cette|Cet actrice|acteur tient un rôle dans cette série :</p>
+        <p>{{ 'sentence.actor'|trans }} :</p>
         <ul>
         {% for program in programs %}
             <li class="text-white list-unstyled">
@@ -32,13 +32,13 @@
     </div>
     <div class="d-flex align-self-end">
         <button class="btn btn-danger mr-4">
-            <a class="text-white text-decoration-none" href="{{ path('actor_edit', {'slug': actor.slug}) }}">edit</a>
+            <a class="text-white text-decoration-none" href="{{ path('actor_edit', {'slug': actor.slug}) }}">{{ 'edit'|trans }}</a>
         </button>
         {{ include('actor/_delete_form.html.twig') }}
     </div>
     <div class="d-flex justify-content-center mt-5">
         <button class="text-dark btn btn-warning">
-            <a class="text-dark text-decoration-none" href="{{ path('actor_index') }}">Retour</a>
+            <a class="text-dark text-decoration-none" href="{{ path('actor_index') }}">{{ 'back'|trans }}</a>
         </button>
     </div>
 {% endblock %}

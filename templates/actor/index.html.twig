@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Actor index{% endblock %}
+{% block title %}{{ 'actor.index'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>L'index des acteurs</h1>
+    <h1>{{ 'actor.index.table'|trans }}</h1>
     <div class="d-flex justify-content-end m-4">
-        <button class="btn btn-warning"><a class="text-dark text-decoration-none" href="{{ path('actor_new') }}">Créer un nouvel acteur</a></button>
+        <button class="btn btn-warning"><a class="text-dark text-decoration-none" href="{{ path('actor_new') }}">{{ 'new_actor'|trans }}</a></button>
     </div>
     <table class="table">
         <thead>
             <tr class="text-white">
                 <th>Id</th>
-                <th>Nom</th>
-                <th>actions</th>
+                <th>{{ 'name.index.table'|trans }}</th>
+                <th>{{ 'actions.index.table'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -21,13 +21,13 @@
                 <td>{{ actor.id }}</td>
                 <td>{{ actor.name }}</td>
                 <td>
-                    <a class="text-info text-decoration-none" href="{{ path('actor_show', {'slug': actor.slug}) }}">Voir</a>
-                    <a class="text-info text-decoration-none" href="{{ path('actor_edit', {'slug': actor.slug}) }}">Éditer</a>
+                    <a class="text-info text-decoration-none" href="{{ path('actor_show', {'slug': actor.slug}) }}">{{ 'show'|trans }}</a>
+                    <a class="text-info text-decoration-none" href="{{ path('actor_edit', {'slug': actor.slug}) }}">{{ 'edit'|trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr class="text-danger">
-                <td colspan="3">Aucun enregistrement trouvé</td>
+                <td colspan="3">{{ 'not.register.actor'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>

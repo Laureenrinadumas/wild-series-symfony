@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Episode{% endblock %}
+{% block title %}{{ 'show.episode'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Episode</h1>
+    <h1>{{ 'show.episode.show'|trans }}</h1>
     <table class="table text-white">
         <tbody>
             <tr>
@@ -11,28 +11,28 @@
                 <td>{{ episode.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
+                <th>{{ 'title.show.episode'|trans }}</th>
                 <td>{{ episode.title }}</td>
             </tr>
             <tr>
-                <th>Numéro</th>
+                <th>{{ 'num.show.episode'|trans }}</th>
                 <td>{{ episode.number }}</td>
             </tr>
             <tr>
-                <th>Synopsis</th>
+                <th>{{ 'Synop.show.episode'|trans }}</th>
                 <td>{{ episode.synopsis }}</td>
             </tr>
         </tbody>
     </table>
     <div class="d-flex align-self-end">
         <button class="btn btn-danger mr-4">
-            <a class="text-white" href="{{ path('episode_edit', {'slug': episode.slug}) }}">Éditer</a>
+            <a class="text-white" href="{{ path('episode_edit', {'slug': episode.slug}) }}">{{ 'edit.show.episode'|trans }}</a>
         </button>
         {{ include('episode/_delete_form.html.twig') }}
     </div>
     <div class="d-flex justify-content-center mt-5">
         <button class="btn btn-warning">
-            <a class="text-dark text-decoration-none" href="{{ path('episode_index') }}">Retour</a>
+            <a class="text-dark text-decoration-none" href="{{ path('episode_index') }}">{{ 'back'|trans }}</a>
         </button>
     </div>
 {% endblock %}

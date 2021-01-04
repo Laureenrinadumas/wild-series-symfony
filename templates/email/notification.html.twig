@@ -17,8 +17,8 @@
     }
 </style>
     <h1>Hello !</h1>
-    <p>Le wild séries vient d'ajouter une nouvelle série qui devrait vous plaire :</p>
+    <p>{{ 'email.sentence'|trans }}</p>
     <h3>{{ program.title }}</h3>
     <img src="{{ program.poster }}" alt="program poster">
     <p>{{ program.summary }}</p>
-    <a href="http://localhost:8000/wild/show/{{ program.slug }}"> Regarder</a>
+    <a href="http://localhost:8000/wild/show/{{ program.slug }}"> {{ 'look_at'|trans }}</a>

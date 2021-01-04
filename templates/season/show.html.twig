@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Season{% endblock %}
+{% block title %}{{ 'season.title'|trans }}Season{% endblock %}
 
 {% block body %}
-    <h1>Saisons</h1>
+    <h1>{{ 'seasons'|trans }}Saisons</h1>
     <table class="table text-white">
         <tbody>
             <tr>
@@ -11,28 +11,28 @@
                 <td>{{ season.id }}</td>
             </tr>
             <tr>
-                <th>Numéro</th>
+                <th>{{ 'number.season'|trans }}Numéro</th>
                 <td>{{ season.number }}</td>
             </tr>
             <tr>
-                <th>Année</th>
+                <th>{{ 'year.season'|trans }}Année</th>
                 <td>{{ season.year }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>{{ 'descriprion.season'|trans }}Description</th>
                 <td>{{ season.description }}</td>
             </tr>
         </tbody>
     </table>
     <div class="d-flex align-self-end">
         <button class="btn btn-danger mr-3">
-            <a class="text-white text-decoration-none" href="{{ path('season_edit', {'id': season.id}) }}">Éditer</a>
+            <a class="text-white text-decoration-none" href="{{ path('season_edit', {'id': season.id}) }}">{{ 'edit'|trans }}Éditer</a>
         </button>
         {{ include('season/_delete_form.html.twig') }}
     </div>
     <div class="d-flex justify-content-center mt-5">
         <button class="btn btn-warning">
-            <a class="text-dark text-decoration-none" href="{{ path('season_index') }}">Retour</a>
+            <a class="text-dark text-decoration-none" href="{{ path('season_index') }}">{{ 'back'|trans }}Retour</a>
         </button>
     </div>
 {% endblock %}

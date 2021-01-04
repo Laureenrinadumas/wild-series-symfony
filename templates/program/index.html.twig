@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Program index{% endblock %}
+{% block title %}{{ 'index.program'|trans }}{% endblock %}
 
 {% block body %}
-    <h1 class="m-4">L'index des programmes</h1>
+    <h1 class="m-4">{{ 'index.programs'|trans }}</h1>
     <div class="d-flex justify-content-end m-4">
     <button class="btn btn-warning">
-        <a class="text-decoration-none text-dark" href="{{ path('program_new') }}">Créer un nouveau programme</a>
+        <a class="text-decoration-none text-dark" href="{{ path('program_new') }}">{{ 'create.new.program'|trans }}</a>
     </button>
     </div>
     <table  class="table">
         <thead>
             <tr class=" text-white">
                 <th scope="col">Id</th>
-                <th scope="col">Titre</th>
-                <th scope="col">Résumé</th>
-                <th scope="col">Acteurs</th>
-                <th scope="col">Poster</th>
-                <th scope="col">actions</th>
+                <th scope="col">{{ 'title.index.program'|trans }}</th>
+                <th scope="col">{{ 'summary.index.program'|trans }}</th>
+                <th scope="col">{{ 'actors.index.program'|trans }}</th>
+                <th scope="col">{{ 'poster.index.program'|trans }}</th>
+                <th scope="col">{{ 'actions.index.program'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -32,18 +32,18 @@
                         <a class="text-decoration-none text-white" href="{{ path('actor_show', {'slug': actor.slug}) }}">{{ actor.name }}</a>
                     </li>
                         {% else %}
-                        <li class="text-white">Oups! pas d'acteur pour cette série</li>
+                        <li class="text-white">{{ 'not.actor.index.program'|trans }}</li>
                     {% endfor %}
                 </td>
                 <td><img class="w-50" src="{{ program.poster }}" alt="poster"></td>
                 <td>
-                    <a class="text-decoration-none text-info" href="{{ path('program_show', {'slug': program.slug}) }}">Voir</a>
-                    <a class="text-decoration-none text-info" href="{{ path('program_edit', {'slug': program.slug}) }}">Éditer</a>
+                    <a class="text-decoration-none text-info" href="{{ path('program_show', {'slug': program.slug}) }}">{{ 'show.index.program'|trans }}</a>
+                    <a class="text-decoration-none text-info" href="{{ path('program_edit', {'slug': program.slug}) }}">{{ 'edit.index.program'|trans }}</a>
                 </td>
             </tr>
             {% else %}
             <tr>
-                <td class="text-white" colspan="5">Aucun enregistrement trouvé</td>
+                <td class="text-white" colspan="5">{{ 'not.register.program'|trans }}Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

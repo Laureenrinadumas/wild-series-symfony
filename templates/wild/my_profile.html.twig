@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <div class="profil-user text-center">
-        <h1>Bienvenue {{ app.user.email }}</h1>
-        <p>Te voici sur ta page de profil.</p>
-        <p>Tu vas pouvoir suivre toutes les séries que tu aimes et en découvrir plein d'autres !</p>
+        <h1>{% trans with {'%username%' : app.user.email} %}
+       Hello_username
+        {% endtrans %}</h1>
+        <p>{{ 'profile.page'|trans }}</p>
+        <p>{{ 'message.welcome'|trans }}</p>
         <button class="btn btn-warning">
             <a class="text-decoration-none link-button" href="{{ path('wild_index') }}">
-                Accueil
+                {{ 'home'|trans }}
             </a>
         </button>
     </div>

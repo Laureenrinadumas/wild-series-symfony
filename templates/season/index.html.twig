@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Season index{% endblock %}
+{% block title %}{{ 'season.index'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>L'index des saisons</h1>
+    <h1>{{ 'index.seasons'|trans }}</h1>
     <div class="d-flex justify-content-end m-4">
-        <button class="btn btn-warning"><a class="text-dark text-decoration-none" href="{{ path('season_new') }}">Créer une nouvelle saison</a></button>
+        <button class="btn btn-warning"><a class="text-dark text-decoration-none" href="{{ path('season_new') }}">{{ 'Create.new.saison'|trans }}</a></button>
     </div>
     <table class="table">
         <thead>
             <tr class="text-white">
                 <th>Id</th>
-                <th>Numéro</th>
-                <th>Année</th>
-                <th>Description</th>
-                <th>actions</th>
+                <th>{{ 'index.seasons.num'|trans }}</th>
+                <th>{{ 'index.seasons.year'|trans }}</th>
+                <th>{{ 'index.seasons.description'|trans }}</th>
+                <th>{{ 'index.seasons.actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -25,13 +25,13 @@
                 <td>{{ season.year }}</td>
                 <td>{{ season.description }}</td>
                 <td>
-                    <a class="text-info" href="{{ path('season_show', {'id': season.id}) }}">Voir</a>
-                    <a class="text-info" href="{{ path('season_edit', {'id': season.id}) }}">Éditer</a>
+                    <a class="text-info" href="{{ path('season_show', {'id': season.id}) }}">{{ 'index.seasons.show'|trans }}</a>
+                    <a class="text-info" href="{{ path('season_edit', {'id': season.id}) }}">{{ 'index.seasons.edit'|trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">Aucun enregistrement trouvé</td>
+                <td colspan="5">{{ 'not.index.seasons'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>

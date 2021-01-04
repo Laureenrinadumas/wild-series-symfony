@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
-{% block title %}Episodes{% endblock %}
+{% block title %}{{ 'episodes.tilte'|trans }}{% endblock %}
 
 {% block body %}
     <div class="block-main text-center">
         <h1 class="text-center">{{ program.title }}</h1>
-        <p class="font-weight-bold text-white">Episode {{ episode.number }}: {{ episode.title }}</p>
-        <p  class="font-weight-bold text-white">Saison {{ season.id }}: {{ season.year }}</p>
+        <p class="font-weight-bold text-white">{{ 'Episodes'|trans }} {{ episode.number }}: {{ episode.title }}</p>
+        <p  class="font-weight-bold text-white">{{ 'season.episode'|trans }}{{ season.id }}: {{ season.year }}</p>
         <p class="text-white">{{ episode.synopsis }}</p>
     </div>
     <div>
-        <h3>Commentaires</h3>
+        <h3>{{ 'comment.user'|trans }}</h3>
         {% for comment in comments %}
             <div>
                 <ul class="list-unstyled">
-                    <li class="text-white">Episode : {{ program.title }} - {{ comment.episode.title }}</li>
-                    <li class="text-white">Auteur : {{ comment.author.username }}</li>
-                    <li class="text-white">Commentaire : {{ comment.comment }}</li>
-                    <li class="text-white">Note : {{ comment.rate }}</li>
+                    <li class="text-white">{{ 'Episode'|trans }} : {{ program.title }} - {{ comment.episode.title }}</li>
+                    <li class="text-white">{{ 'Actor'|trans }} : {{ comment.author.username }}</li>
+                    <li class="text-white">{{ 'comment'|trans }} : {{ comment.comment }}</li>
+                    <li class="text-white">{{ 'evaluation'|trans }} : {{ comment.rate }}</li>
                     {% if app.user.id is defined and app.user.id == comment.author.id or is_granted('ROLE_ADMIN') %}
-                        <li><a href="{{ path('wild_comment_edit', {'id': comment.id}) }}">Supprimer</a></li>
+                        <li><a href="{{ path('wild_comment_edit', {'id': comment.id}) }}">{{ 'delete'|trans }}</a></li>
                     {% endif %}
                 </ul>
             </div>

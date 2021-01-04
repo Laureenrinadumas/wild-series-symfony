@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Programs{% endblock %}
+{% block title %}{{ 'programs_title'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Nos séries : </h1>
+    <h1>{{ 'our series'|trans }} : </h1>
     {% for program in programs %}
         <div>
             <h2>{{ loop.index }} - <a class="text-decoration-none text-white" href="{{ path('wild_show', { 'slug': program.slug }) }}"> {{ program.title }}</a></h2>
-            <h4>Catégorie : {{ program.category.name }}</h4>
+            <h4>{{ 'Category'|trans }} : {{ program.category.name }}</h4>
             <p class="text-white text-justify">{{ program.summary }}</p>
         </div>
     {% else %}
-        Aucune série trouvée.
+        {{ 'not_serie'|trans }}
     {% endfor %}
     <div class="col-3 d-flex justify-content-center">
         <div class="form-group">
@@ -22,14 +22,14 @@
             <div >
                 {{ form_row(form.searchField) }}
             </div>
-            <button class="btn btn-warning" type="submit" name="btnSearch">Recherche</button>
+            <button class="btn btn-warning" type="submit" name="btnSearch">{{ 'search.program'|trans }}</button>
         {{ form_end(form) }}
         </div>
     </div>
     <div class="d-flex justify-content-end m-4">
         <button class="btn btn-warning">
             <a class="text-decoration-none link-button" href="{{ path('app_index') }}">
-            Accueil
+            {{ 'home'|trans }}
             </a>
         </button>
     </div>
