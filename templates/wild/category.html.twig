@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block title %}Category{% endblock %}
+{% block title %}{{ 'Category.title'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Catégorie : {{ category.name }} :</h1>
+    <h1>{{ 'Category'|trans }}Catégorie : {{ category.name }} :</h1>
     {% for program in programs %}
         <div>
             <h2>{{ program.id }} / {{ program.title }}</h2>
             <p>{{ program.summary }}</p>
         </div>
     {% else %}
-        Aucune série trouvée
+        {{ 'not_serie'|trans }}Aucune série trouvée
     {% endfor %}
     <button class="btn btn-warning"><a href="{{ path('wild_index') }}">
-        Accueil
+        {{ 'home'|trans }}
     </a></button>
 {% endblock %}

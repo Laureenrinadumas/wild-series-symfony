@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}{{ 'category.title'|trans }}{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1 class="m-5">L'index des catégories</h1>
+        <h1 class="m-5">{{ 'index.categories'|trans }}</h1>
             <div class="d-flex justify-content-end m-4">
                 <button class="btn btn-warning mb-3">
-                    <a class="text-dark text-decoration-none" href="{{ path('category_new') }}">Créer une nouvelle catégorie</a>
+                    <a class="text-dark text-decoration-none" href="{{ path('category_new') }}">{{ 'create.new.category'|trans }}</a>
                 </button>
             </div>
         <ul class="list-group text-white" >

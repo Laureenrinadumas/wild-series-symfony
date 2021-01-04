@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="7CnDUSr" resname="Hello_username">
+        <source>Hello_username</source>
+        <target>Hello %username%</target>
+      </trans-unit>
+      <trans-unit id="tTGBpNh" resname="My account">
+        <source>My account</source>
+        <target>My account</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="KcnDDgY" resname="registration">
+        <source>registration</source>
+        <target>Create an account</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="lspLEXq" resname="Wild Series">
+        <source>Wild Series</source>
+        <target>Wild Series</target>
+      </trans-unit>
+      <trans-unit id="DfVvYpD" resname="All Series">
+        <source>All Series</source>
+        <target>All Series</target>
+      </trans-unit>
+      <trans-unit id="KSwG8AR" resname="Category">
+        <source>Category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="qCleCP9" resname="Series">
+        <source>Series</source>
+        <target>Series</target>
+      </trans-unit>
+      <trans-unit id="wVUnsZu" resname="Seasons">
+        <source>Seasons</source>
+        <target>Seasons</target>
+      </trans-unit>
+      <trans-unit id="g.lyLZu" resname="Episodes">
+        <source>Episodes</source>
+        <target>Episodes</target>
+      </trans-unit>
+      <trans-unit id="_waRj.e" resname="Actors">
+        <source>Actors</source>
+        <target>Actors</target>
+      </trans-unit>
+      <trans-unit id="pO8wS6Q" resname="language">
+        <source>language</source>
+        <target>Language</target>
+      </trans-unit>
+      <trans-unit id="zI.Z63_" resname="Welcome!">
+        <source>Welcome!</source>
+        <target>Welcome!</target>
+      </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>Language</target>
+      </trans-unit>
+      <trans-unit id="hbkP741" resname="programs_title">
+        <source>programs_title</source>
+        <target>Programs</target>
+      </trans-unit>
+      <trans-unit id="FLsNXKF" resname="our series">
+        <source>our series</source>
+        <target>Our series</target>
+      </trans-unit>
+      <trans-unit id="UW6mBs7" resname="not_serie">
+        <source>not_serie</source>
+        <target>Sorry ! there is no serie</target>
+      </trans-unit>
+      <trans-unit id="iS_UtvM" resname="search.program">
+        <source>search.program</source>
+        <target>Search for a program</target>
+      </trans-unit>
+      <trans-unit id="TqFAWIF" resname="home">
+        <source>home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="3AMGfOL" resname="episodes.tilte">
+        <source>episodes.tilte</source>
+        <target>Episodes</target>
+      </trans-unit>
+      <trans-unit id="PkGtT8I" resname="season.episode">
+        <source>season.episode</source>
+        <target>Season</target>
+      </trans-unit>
+      <trans-unit id="0D6VeQJ" resname="comment.user">
+        <source>comment.user</source>
+        <target>Comment</target>
+      </trans-unit>
+      <trans-unit id="sZxFC0f" resname="Episode">
+        <source>Episode</source>
+        <target>Episode</target>
+      </trans-unit>
+      <trans-unit id="gFQ2BpO" resname="episode.program">
+        <source>episode.program</source>
+        <target>Episode</target>
+      </trans-unit>
+      <trans-unit id="3HT564s" resname="add.episode">
+        <source>add.episode</source>
+        <target>Add an episode</target>
+      </trans-unit>
+      <trans-unit id="B9.h5._" resname="back.seasons">
+        <source>back.seasons</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="HqWCTUj" resname="&lt;h1&gt;Hello_username&lt;/h1&gt;">
+        <source>&lt;h1&gt;Hello_username&lt;/h1&gt;</source>
+        <target>Hello %username%</target>
+      </trans-unit>
+      <trans-unit id="mkJJixd" resname="profile.page">
+        <source>profile.page</source>
+        <target>Here you are on your profile page.</target>
+      </trans-unit>
+      <trans-unit id="K7tnbPy" resname="message.welcome">
+        <source>message.welcome</source>
+        <target>You will be able to follow all the series that you like and discover many others!</target>
+      </trans-unit>
+      <trans-unit id="kuafH.x" resname="program.category">
+        <source>program.category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="ZDKzaMC" resname="program.seasons">
+        <source>program.seasons</source>
+        <target>Seasons</target>
+      </trans-unit>
+      <trans-unit id="9JEmqgB" resname="program.season.num">
+        <source>program.season.num</source>
+        <target>Number</target>
+      </trans-unit>
+      <trans-unit id="cf4Qsyu" resname="program.actors">
+        <source>program.actors</source>
+        <target>Actors</target>
+      </trans-unit>
+      <trans-unit id="Kjnf4SL" resname="not_actors">
+        <source>not_actors</source>
+        <target>Sorry ! there is no actor</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="T8YHz9r" resname="index.program">
+        <source>index.program</source>
+        <target>Program index</target>
+      </trans-unit>
+      <trans-unit id="VSYfiSA" resname="index.programs">
+        <source>index.programs</source>
+        <target>Program index</target>
+      </trans-unit>
+      <trans-unit id="Sm75tNf" resname="create.new.program">
+        <source>create.new.program</source>
+        <target>Create a new program</target>
+      </trans-unit>
+      <trans-unit id="5MFWbi5" resname="title.index.program">
+        <source>title.index.program</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="yOnnKDP" resname="summary.index.program">
+        <source>summary.index.program</source>
+        <target>Summary</target>
+      </trans-unit>
+      <trans-unit id="JY4eeT4" resname="actors.index.program">
+        <source>actors.index.program</source>
+        <target>Actors</target>
+      </trans-unit>
+      <trans-unit id="OykUEen" resname="poster.index.program">
+        <source>poster.index.program</source>
+        <target>Poster</target>
+      </trans-unit>
+      <trans-unit id="pCyh5Yh" resname="actions.index.program">
+        <source>actions.index.program</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="aCQtmdO" resname="not.actor.index.program">
+        <source>not.actor.index.program</source>
+        <target>Sorry ! there is no actor.</target>
+      </trans-unit>
+      <trans-unit id="ysdt9LK" resname="show.index.program">
+        <source>show.index.program</source>
+        <target>Show</target>
+      </trans-unit>
+      <trans-unit id="h25lqsK" resname="edit.index.program">
+        <source>edit.index.program</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="bnpwVHd" resname="not.register.program">
+        <source>not.register.program</source>
+        <target>Sorry ! there is no program.</target>
+      </trans-unit>
+      <trans-unit id="jypL2Mp" resname="title_edit_program">
+        <source>title_edit_program</source>
+        <target>Edit a program</target>
+      </trans-unit>
+      <trans-unit id="C6m_YeJ" resname="edit.program">
+        <source>edit.program</source>
+        <target>Edit a program</target>
+      </trans-unit>
+      <trans-unit id="PEgjRvN" resname="back">
+        <source>back</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="oHaLAIB" resname="new.program">
+        <source>new.program</source>
+        <target>New program</target>
+      </trans-unit>
+      <trans-unit id="QGmRDZV" resname="back.program">
+        <source>back.program</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="YZdZVQP" resname="delete">
+        <source>delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="2b.01Ry" resname="show.program">
+        <source>show.program</source>
+        <target>Show a program</target>
+      </trans-unit>
+      <trans-unit id="mQLToza" resname="program.show">
+        <source>program.show</source>
+        <target>Show a program</target>
+      </trans-unit>
+      <trans-unit id="3jo.p92" resname="title.program">
+        <source>title.program</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="rUaFvyV" resname="summary.program">
+        <source>summary.program</source>
+        <target>Summary</target>
+      </trans-unit>
+      <trans-unit id="IA5LGLY" resname="poster.program">
+        <source>poster.program</source>
+        <target>Poster</target>
+      </trans-unit>
+      <trans-unit id="URYe0im" resname="actor.program">
+        <source>actor.program</source>
+        <target>Actors</target>
+      </trans-unit>
+      <trans-unit id="LSfp.Y6" resname="not.actor.program">
+        <source>not.actor.program</source>
+        <target>Sorry ! there is no actor.</target>
+      </trans-unit>
+      <trans-unit id="BXhFRnz" resname="title.index.comment">
+        <source>title.index.comment</source>
+        <target>Comment index</target>
+      </trans-unit>
+      <trans-unit id="Tdj1j0N" resname="index.comments">
+        <source>index.comments</source>
+        <target>Comment index</target>
+      </trans-unit>
+      <trans-unit id="xhQBXjS" resname="comment.index.table">
+        <source>comment.index.table</source>
+        <target>Comment</target>
+      </trans-unit>
+      <trans-unit id="Q6vNNGO" resname="rate.index.table">
+        <source>rate.index.table</source>
+        <target>Rate</target>
+      </trans-unit>
+      <trans-unit id="SDM_8YP" resname="actions.index.table">
+        <source>actions.index.table</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="LBMFEKU" resname="title_comment_edit">
+        <source>title_comment_edit</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="zBmLYDM" resname="comment.edit">
+        <source>comment.edit</source>
+        <target>Edit a comment</target>
+      </trans-unit>
+      <trans-unit id="FYkWpP6" resname="new.comment">
+        <source>new.comment</source>
+        <target>New comment</target>
+      </trans-unit>
+      <trans-unit id="B4LpMWE" resname="create.new.comment">
+        <source>create.new.comment</source>
+        <target>Create a new comment</target>
+      </trans-unit>
+      <trans-unit id="3n9n2fT" resname="title.comment">
+        <source>title.comment</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="H5a0mM." resname="comment.title.base">
+        <source>comment.title.base</source>
+        <target>Comment</target>
+      </trans-unit>
+      <trans-unit id="B006Wua" resname="title.comment.show">
+        <source>title.comment.show</source>
+        <target>Comment</target>
+      </trans-unit>
+      <trans-unit id="O6H39QJ" resname="rate.comment.show">
+        <source>rate.comment.show</source>
+        <target>Rate</target>
+      </trans-unit>
+      <trans-unit id="6tlp1bV" resname="back_to_list">
+        <source>back_to_list</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="IRfsJsj" resname="edit.show.comment">
+        <source>edit.show.comment</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="98MmS7E" resname="edit.comment.title">
+        <source>edit.comment.title</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="la0Ip5t" resname="edit.comment">
+        <source>edit.comment</source>
+        <target>Edit a comment</target>
+      </trans-unit>
+      <trans-unit id="ZUtjqDu" resname="form.delete">
+        <source>form.delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="RJmVxP6" resname="Actor">
+        <source>Actor</source>
+        <target>Actor</target>
+      </trans-unit>
+      <trans-unit id="xEuy.VF" resname="comment">
+        <source>comment</source>
+        <target>Comment</target>
+      </trans-unit>
+      <trans-unit id="7_d7IB3" resname="evaluation">
+        <source>evaluation</source>
+        <target>Rate</target>
+      </trans-unit>
+      <trans-unit id="52uDCHG" resname="Category.title">
+        <source>Category.title</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="Yx6szt_" resname="email.sentence">
+        <source>email.sentence</source>
+        <target>The wild series has just added a new series that you should like:</target>
+      </trans-unit>
+      <trans-unit id="DxdhEWp" resname="look_at">
+        <source>look_at</source>
+        <target>Watch now !</target>
+      </trans-unit>
+      <trans-unit id="wWD7zua" resname="actor.index">
+        <source>actor.index</source>
+        <target>Actor index</target>
+      </trans-unit>
+      <trans-unit id="MICQAjS" resname="actor.index.table">
+        <source>actor.index.table</source>
+        <target>Actor index</target>
+      </trans-unit>
+      <trans-unit id="bMmtxGX" resname="name.index.table">
+        <source>name.index.table</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="HGMzUJ3" resname="show">
+        <source>show</source>
+        <target>Show</target>
+      </trans-unit>
+      <trans-unit id="IRPtEHs" resname="not.register.actor">
+        <source>not.register.actor</source>
+        <target>Sorry ! there is no actor.</target>
+      </trans-unit>
+      <trans-unit id="uNCBsaf" resname="title_edit_actor">
+        <source>title_edit_actor</source>
+        <target>Edit an actor</target>
+      </trans-unit>
+      <trans-unit id="LhR4Pqr" resname="edit.actor">
+        <source>edit.actor</source>
+        <target>Edit an actor</target>
+      </trans-unit>
+      <trans-unit id="yMFqRx1" resname="new.actor">
+        <source>new.actor</source>
+        <target>New actor</target>
+      </trans-unit>
+      <trans-unit id="FKoaLWF" resname="create.new.actor">
+        <source>create.new.actor</source>
+        <target>Create a new actor</target>
+      </trans-unit>
+      <trans-unit id="qaaDB0m" resname="Actor.title">
+        <source>Actor.title</source>
+        <target>Actor</target>
+      </trans-unit>
+      <trans-unit id="7af8IJk" resname="actors.title">
+        <source>actors.title</source>
+        <target>Actors</target>
+      </trans-unit>
+      <trans-unit id="YAiCwL5" resname="name.actor">
+        <source>name.actor</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="JBTBKYP" resname="sentence.actor">
+        <source>sentence.actor</source>
+        <target>Notable series</target>
+      </trans-unit>
+      <trans-unit id="AITuZlO" resname="category.title">
+        <source>category.title</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="282vUpI" resname="index.categories">
+        <source>index.categories</source>
+        <target>Category index</target>
+      </trans-unit>
+      <trans-unit id="yXItddl" resname="create.new.category">
+        <source>create.new.category</source>
+        <target>Create a new category</target>
+      </trans-unit>
+      <trans-unit id="Db5V0wl" resname="add.category">
+        <source>add.category</source>
+        <target>Add a category</target>
+      </trans-unit>
+      <trans-unit id="jDCCQEL" resname="add.new.category">
+        <source>add.new.category</source>
+        <target>Add a new category</target>
+      </trans-unit>
+      <trans-unit id=".5VT_qD" resname="index.episode">
+        <source>index.episode</source>
+        <target>Episode index</target>
+      </trans-unit>
+      <trans-unit id="2U69TkJ" resname="index.episodes">
+        <source>index.episodes</source>
+        <target>Episode index </target>
+      </trans-unit>
+      <trans-unit id="BIrhb2G" resname="title.index.episode">
+        <source>title.index.episode</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="qZ7RGDg" resname="num.index.episode">
+        <source>num.index.episode</source>
+        <target>Numero</target>
+      </trans-unit>
+      <trans-unit id="600t0VA" resname="synop.index.episode">
+        <source>synop.index.episode</source>
+        <target>Synopsy</target>
+      </trans-unit>
+      <trans-unit id="T0a2n_7" resname="actions.index.episode">
+        <source>actions.index.episode</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="Wazwg.9" resname="not.index.episode">
+        <source>not.index.episode</source>
+        <target>Sorry ! there is no episode</target>
+      </trans-unit>
+      <trans-unit id="zrVyrOJ" resname="title_edit_episode">
+        <source>title_edit_episode</source>
+        <target>Edit an episode</target>
+      </trans-unit>
+      <trans-unit id="gBGxD6C" resname="create.edit.episode">
+        <source>create.edit.episode</source>
+        <target>Create an episode</target>
+      </trans-unit>
+      <trans-unit id="ec5YZkK" resname="new.episode">
+        <source>new.episode</source>
+        <target>New episode</target>
+      </trans-unit>
+      <trans-unit id="aBfOR03" resname="create.new.episode">
+        <source>create.new.episode</source>
+        <target>Create a new episode</target>
+      </trans-unit>
+      <trans-unit id="jtAiPxC" resname="show.episode">
+        <source>show.episode</source>
+        <target>Show an episode</target>
+      </trans-unit>
+      <trans-unit id="WUWm_Ka" resname="show.episode.show">
+        <source>show.episode.show</source>
+        <target>Show an episode</target>
+      </trans-unit>
+      <trans-unit id="bNlqpnq" resname="title.show.episode">
+        <source>title.show.episode</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="bMfgt3u" resname="num.show.episode">
+        <source>num.show.episode</source>
+        <target>Numero</target>
+      </trans-unit>
+      <trans-unit id="a2XjKY7" resname="Synop.show.episode">
+        <source>Synop.show.episode</source>
+        <target>Synopsy</target>
+      </trans-unit>
+      <trans-unit id="qXQKuC3" resname="season.index">
+        <source>season.index</source>
+        <target>Season index</target>
+      </trans-unit>
+      <trans-unit id="OJsmHwt" resname="index.seasons">
+        <source>index.seasons</source>
+        <target>Season index</target>
+      </trans-unit>
+      <trans-unit id="vgHkMrG" resname="Create.new.saison">
+        <source>Create.new.saison</source>
+        <target>Create a new season</target>
+      </trans-unit>
+      <trans-unit id="qMfvQmf" resname="index.seasons.num">
+        <source>index.seasons.num</source>
+        <target>Numero</target>
+      </trans-unit>
+      <trans-unit id="nER8DZ8" resname="index.seasons.year">
+        <source>index.seasons.year</source>
+        <target>Year</target>
+      </trans-unit>
+      <trans-unit id="UtruSTo" resname="index.seasons.description">
+        <source>index.seasons.description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="MwDMix3" resname="index.seasons.actions">
+        <source>index.seasons.actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="Vl9sRhh" resname="index.seasons.show">
+        <source>index.seasons.show</source>
+        <target>Show</target>
+      </trans-unit>
+      <trans-unit id="gPXrs6k" resname="index.seasons.edit">
+        <source>index.seasons.edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="8ev2eBC" resname="not.index.seasons">
+        <source>not.index.seasons</source>
+        <target>Sorry ! there is no season.</target>
+      </trans-unit>
+      <trans-unit id="i84Lpn2" resname="edit_seasons">
+        <source>edit_seasons</source>
+        <target>Edit a season</target>
+      </trans-unit>
+      <trans-unit id="VjCqDOV" resname="edit.season">
+        <source>edit.season</source>
+        <target>Edit a season</target>
+      </trans-unit>
+      <trans-unit id="TDrg4E_" resname="new.season">
+        <source>new.season</source>
+        <target>New season</target>
+      </trans-unit>
+      <trans-unit id="vMPawpv" resname="create.season">
+        <source>create.season</source>
+        <target>Create a new season</target>
+      </trans-unit>
+      <trans-unit id="FkmZb.O" resname="season.title">
+        <source>season.title</source>
+        <target>Season</target>
+      </trans-unit>
+      <trans-unit id="9a_dcll" resname="seasons">
+        <source>seasons</source>
+        <target>Seasons</target>
+      </trans-unit>
+      <trans-unit id="9HMC6th" resname="number.season">
+        <source>number.season</source>
+        <target>Number</target>
+      </trans-unit>
+      <trans-unit id="PBLP5nC" resname="year.season">
+        <source>year.season</source>
+        <target>Year</target>
+      </trans-unit>
+      <trans-unit id="0qihu7P" resname="descriprion.season">
+        <source>descriprion.season</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="h3gPpd5" resname="register">
+        <source>register</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="XvTeocv" resname="no.found.records">
+        <source>no.found.records</source>
+        <target>No found record</target>
+      </trans-unit>
+      <trans-unit id="yvoMwlS" resname="new.comment.button">
+        <source>new.comment.button</source>
+        <target>Add a comment</target>
+      </trans-unit>
+      <trans-unit id="AstW7lQ" resname="new_actor">
+        <source>new_actor</source>
+        <target>New actor</target>
+      </trans-unit>
+      <trans-unit id="DiImtSN" resname="Welcome">
+        <source>Welcome</source>
+        <target>Welcome !</target>
+      </trans-unit>
+      <trans-unit id="_u1P3ZE" resname="edit.show.episode">
+        <source>edit.show.episode</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="H2qTrwj" resname="create_new_episode">
+        <source>create_new_episode</source>
+        <target>Create a new episode</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

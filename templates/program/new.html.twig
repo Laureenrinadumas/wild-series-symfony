@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Program{% endblock %}
+{% block title %}{{ 'new.program'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Créer un nouveau programme</h1>
+    <h1>{{ 'create.new.program'|trans }}</h1>
     {{ include('program/_form.html.twig') }}
     <div class="d-flex justify-content-center">
         <button class="btn btn-warning">
-            <a class="text-dark text-decoration-none" href="{{ path('program_index') }}">Retour</a>
+            <a class="text-dark text-decoration-none" href="{{ path('program_index') }}">{{ 'back.program'|trans }}</a>
         </button>
     </div>
 {% endblock %}

@@ -13,34 +13,34 @@
                 <p class="text-justify text-white">{{ program.summary }}</p>
             </div>
             <div>
-                <p class="font-weight-bold text-white">Catégorie :</p>
+                <p class="font-weight-bold text-white">{{ 'program.category'|trans }} :</p>
                 <p class="text-white">{{ program.category.name }}</p>
             </div>
             <div>
-                <p  class="font-weight-bold text-white">Saisons :</p>
+                <p  class="font-weight-bold text-white">{{ 'program.seasons'|trans }} :</p>
                 {% for season in seasons %}
-                    <p><a class="text-decoration-none link-button ml-4 text-white" href="{{ path('wild_show_season', { 'id' : season.id }) }}">Saison {{ season.number }}</a></p>
+                    <p><a class="text-decoration-none link-button ml-4 text-white" href="{{ path('wild_show_season', { 'id' : season.id }) }}">{{ 'program.season.num'|trans }} {{ season.number }}</a></p>
                 {% endfor %}
             </div>
             <div>
-                <p  class="font-weight-bold text-white">Acteurs :</p>
+                <p  class="font-weight-bold text-white">{{ 'program.actors'|trans }} :</p>
                 <ul class="list-group">
                     {% for actor in program.actors %}
                         <li class="list-group"><a class="text-decoration-none link-button ml-4 text-white" href="{{ path('actor_show', {'slug' : actor.slug}) }}">{{ actor.name }}</a></li>
                     {% else %}
-                        <li class="text-white">Oups! pas d'acteur pour cette série</li>
+                        <li class="text-white">{{ 'not_actors'|trans }}</li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
     </div>
     {% if is_granted('ROLE_ADMIN') %}
-        <button class="btn btn-danger"><a class="text-decoration-none text-white" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a></button>
+        <button class="btn btn-danger"><a class="text-decoration-none text-white" href="{{ path('program_edit', { 'slug': program.slug} ) }}">{{ 'edit'|trans }}</a></button>
     {% endif %}
     <div class="d-flex justify-content-end m-4">
         <button class="btn btn-warning">
             <a class="text-decoration-none link-button" href="{{ path('wild_index') }}">
-            Accueil
+            {{ 'home'|trans }}
             </a>
         </button>
     </div>

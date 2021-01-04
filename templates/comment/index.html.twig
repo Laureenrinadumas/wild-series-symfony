@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Comment index{% endblock %}
+{% block title %}{{ 'title.index.comment'|trans }}{% endblock %}
 
 {% block body %}
-    <h1 class="mt-5">Commentaires index</h1>
+    <h1 class="mt-5">{{ 'index.comments'|trans }}</h1>
 
     <table class="table text-white">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Comment</th>
-                <th>Rate</th>
-                <th>actions</th>
+                <th>{{ 'comment.index.table'|trans }}</th>
+                <th>{{ 'rate.index.table'|trans }}</th>
+                <th>{{ 'actions.index.table'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -21,17 +21,17 @@
                 <td>{{ comment.comment }}</td>
                 <td>{{ comment.rate }}</td>
                 <td>
-                    <a href="{{ path('comment_show', {'id': comment.id}) }}">Voir</a>
-                    <a href="{{ path('comment_edit', {'id': comment.id}) }}">Éditer</a>
+                    <a href="{{ path('comment_show', {'id': comment.id}) }}">{{ 'show'|trans }}</a>
+                    <a href="{{ path('comment_edit', {'id': comment.id}) }}">{{ 'edit'|trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">{{ 'no.found.records'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('comment_new') }}">Nouveau commentaire</a>
+    <a href="{{ path('comment_new') }}">{{ 'new.comment.button'|trans }}Nouveau commentaire</a>
 {% endblock %}

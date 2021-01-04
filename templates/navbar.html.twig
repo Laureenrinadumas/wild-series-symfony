@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <a class="navbar-brand text-white" href="{{ path('app_index') }}">Wild Séries</a>
+        <a class="navbar-brand text-white" href="{{ path('app_index') }}">{{ 'Wild Series'|trans }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-white" href="{{ path('wild_index') }}">Séries<span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="{{ path('wild_index') }}">{{ 'All Series'|trans }}<span class="sr-only">(current)</span></a>
                 </li>
                 {% if is_granted('ROLE_ADMIN') %}
                     <ul class="navbar-nav ml-auto">
@@ -17,11 +17,11 @@
                                 Admin
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ path('category_index') }}">Catégories</a>
-                                <a class="dropdown-item" href="{{ path('program_index') }}">Séries</a>
-                                <a class="dropdown-item" href="{{ path('season_index') }}">Saisons</a>
-                                <a class="dropdown-item" href="{{ path('episode_index') }}">Episodes</a>
-                                <a class="dropdown-item" href="{{ path('actor_index') }}">Acteurs</a>
+                                <a class="dropdown-item" href="{{ path('category_index') }}">{{ 'Category'|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('program_index') }}">{{ 'Series'|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('season_index') }}">{{ 'Seasons'|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('episode_index') }}">{{ 'Episodes'|trans }}</a>
+                                <a class="dropdown-item" href="{{ path('actor_index') }}">{{ 'Actors'|trans }}</a>
                             </div>
                         </li>
                     </ul>
@@ -30,16 +30,28 @@
            <div class="d-flex justify-content-end text-white mr-2">
             {% if app.user %}
                 <li class="nav-item nav-link active">
-                    Hello {{ app.user.email }}
+                {% trans with {'%username%' : app.user.email} %}
+                    Hello_username
+                {% endtrans %}
                 </li>
-                    <a class="nav-link text-white text-decoration-none" href="{{ path('wild_profile') }}">Mon compte</a>
+                    <a class="nav-link text-white text-decoration-none" href="{{ path('wild_profile') }}">{{ 'My account'|trans }}</a>
 
-                <a class="nav-link text-white text-decoration-none ml-4" href="{{ path('app_logout') }}">Se déconnecter</a>
+                <a class="nav-link text-white text-decoration-none ml-4" href="{{ path('app_logout') }}">{{  'account.logout'|trans }}</a>
             {% else %}
-                <a class="nav-link text-white text-decoration-none" href="{{ path('app_register') }}"> S'inscrire</a>
+                <a class="nav-link text-white text-decoration-none" href="{{ path('app_register') }}">{{ 'registration'|trans }}</a>
 
-                <a class="nav-link text-white text-decoration-none" href="{{ path('app_login') }}">Se connecter</a>
+                <a class="nav-link text-white text-decoration-none" href="{{ path('app_login') }}">{{ 'account.login'|trans }}</a>
             {% endif %}
+               <div class="dropdown">
+                   <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       {{ 'Language'|trans }}
+                   </button>
+                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                       <a class="dropdown-item" href="#">En</a>
+                       <a class="dropdown-item" href="#">Fr</a>
+                       <a class="dropdown-item" href="#">Es</a>
+                   </div>
+               </div>
             </div>
         </div>
     </nav>

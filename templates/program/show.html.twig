@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Program{% endblock %}
+{% block title %}{{ 'show.program'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Programmes</h1>
+    <h1>{{ 'program.show'|trans }}</h1>
     <table class="table">
         <tbody class="text-white">
             <tr>
@@ -11,36 +11,36 @@
                 <td class="text-white">{{ program.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
+                <th>{{ 'title.program'|trans }}</th>
                 <td class="text-white">{{ program.title }}</td>
             </tr>
             <tr>
-                <th>Résumer</th>
+                <th>{{ 'summary.program'|trans }}</th>
                 <td class="text-white">{{ program.summary }}</td>
             </tr>
             <tr>
-                <th>Poster</th>
+                <th>{{ 'poster.program'|trans }}</th>
                 <td>{{ program.poster }}</td>
             </tr>
         </tbody>
     </table>
-    <p class="text-white">Acteur :</p>
+    <p class="text-white">{{ 'actor.program'|trans }}:</p>
     <ul>
         {% for actor in program.actors %}
             <li class="text-white">{{ actor.name }} </li>
         {% else %}
-            <li class="text-white">Aucun acteur pour cette série</li>
+            <li class="text-white">{{ 'not.actor.program'|trans }}</li>
         {% endfor %}
     </ul>
     <div class="d-flex align-self-end">
         <button class="btn btn-danger mr-3">
-            <a class="text-decoration-none text-white" href="{{ path('program_edit', {'slug': program.slug}) }}">Éditer</a>
+            <a class="text-decoration-none text-white" href="{{ path('program_edit', {'slug': program.slug}) }}">{{ 'edit.program'|trans }}</a>
         </button>
         {{ include('program/_delete_form.html.twig') }}
     </div>
     <div class="d-flex justify-content-center mt-5">
         <button class="btn btn-warning">
-            <a class="text-dark text-decoration-none" href="{{ path('program_index') }}">Retour</a>
+            <a class="text-dark text-decoration-none" href="{{ path('program_index') }}">{{ 'back.program'|trans }}</a>
         </button>
     </div>
 

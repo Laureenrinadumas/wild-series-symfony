@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
-{% block title %}Ajouter une catégorie{% endblock %}
+{% block title %}{{ 'add.category'|trans }}{% endblock %}
 
 {% block body %}
-    <h2 class="mt-5">Ajouter une nouvelle catégorie</h2>
+    <h2 class="mt-5">{{ 'add.new.category'|trans }}</h2>
     <div class="mt-5 text-white">
         {{ form_start(form) }}
             {{ form_row(form.name) }}
@@ -10,6 +10,6 @@
         {{ form_end(form) }}
     </div>
     <div class="d-flex justify-content-center mt-5">
-        <button class="btn btn-warning"><a class="text-decoration-none text-dark" href="{{ path('category_index') }}">Retour</a></button>
+        <button class="btn btn-warning"><a class="text-decoration-none text-dark" href="{{ path('category_index') }}">{{ 'back'|trans }}</a></button>
     </div>
 {% endblock %}

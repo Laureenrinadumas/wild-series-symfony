@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editer Commentaire{% endblock %}
+{% block title %} {{ 'edit.comment.title'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Éditer un commentaire</h1>
+    <h1>{{ 'edit.comment'|trans }}</h1>
 
     {{ include('wild/comment/_form.html.twig', {'button_label': 'Éditer'}) }}
 
